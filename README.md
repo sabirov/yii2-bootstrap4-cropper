@@ -1,6 +1,8 @@
-Yii2 Bootstrap4 Image Cropper InputWidget
-=========================================
-Cropper for Yii2 which uses Bootstrap4
+Yii2 Bootstrap4 Image Cropper InputWidget 
+==========================================
+UNDER DEVELOPMENT
+-----------------
+Cropper for Yii2 which uses Bootstrap4 based on <a href="https://github.com/bilginnet/yii2-cropper" target="_blank">bilginnet/yii2-cropper</a>
 
 Installation
 ------------
