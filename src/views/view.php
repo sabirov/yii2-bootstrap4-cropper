@@ -7,14 +7,16 @@
  * @since       19.12.18
  */
 
+use yii\helpers\Html;
+
 /**
  * @var $this \yii\web\View
  */
-?>
-    <div class="cropper-wrapper clearfix">
-        <img id="image" src="img/demo/profile3.jpg">
-    </div>
-<?php
+
+echo Html::img('/img/demo/profile3.jpg', [
+        'id' => 'image'
+]);
+
 $passVariables = <<<JS
 const test = 'test';
 JS;

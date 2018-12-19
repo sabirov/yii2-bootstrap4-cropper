@@ -17,10 +17,8 @@ class Cropper extends InputWidget
 {
     /**
      * @var bool $modal Show crop box in modal window
-     * @var string $imageId preview pictures ID
      */
     public $modal = false;
-    public $imageId = 'image';
 
     /**
      * Initializes the widget.
