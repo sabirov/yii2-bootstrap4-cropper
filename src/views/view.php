@@ -16,10 +16,10 @@ use yii\helpers\Html;
  * @var $imageId string
  */
 
-$cropper_asset = CropperAsset::register($this);
-InitCropperAsset::register($this);
+CropperAsset::register($this);
+$asset = InitCropperAsset::register($this);
 
-$img_src = $cropper_asset->baseUrl . '/img/no-image.svg';
+$img_src = $asset->baseUrl . '/img/no-image.svg';
 
 echo Html::img($img_src, [
     'id' => $imageId,
