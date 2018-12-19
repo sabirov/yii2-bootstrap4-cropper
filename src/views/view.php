@@ -11,6 +11,12 @@
  * @var $this \yii\web\View
  */
 ?>
-<div>
-    <img id="image" src="picture.jpg">
-</div>
+    <div class="cropper-wrapper clearfix">
+        <img id="image" src="img/demo/profile3.jpg">
+    </div>
+<?php
+$passVariables = <<<JS
+const test = 'test';
+JS;
+
+Yii::$app->view->registerJs($passVariables, $this::POS_HEAD);
