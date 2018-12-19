@@ -13,7 +13,7 @@ use yii\web\AssetBundle;
 
 class InitCropperAsset extends AssetBundle
 {
-    public $sourcePath = '@vendor/sabirov/cropper';
+    public $sourcePath = '@vendor/sabirov/yii2-cropper';
     public $css = [];
     public $js = [
         'assets/js/initializeCropper.js'
