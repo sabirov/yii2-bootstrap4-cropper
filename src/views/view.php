@@ -7,8 +7,7 @@
  * @since       19.12.18
  */
 
-use sabirov\cropper\assets\CropperAsset;
-use sabirov\cropper\assets\InitCropperAsset;
+use sabirov\cropper\InitCropperAsset;
 use yii\helpers\Html;
 
 /**
@@ -16,7 +15,6 @@ use yii\helpers\Html;
  * @var $imageId string
  */
 
-CropperAsset::register($this);
 $asset = InitCropperAsset::register($this);
 
 $img_src = $asset->baseUrl . '/img/no-image.svg';

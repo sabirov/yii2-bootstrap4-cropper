@@ -27,7 +27,7 @@ class Cropper extends InputWidget
     {
         parent::init();
 
-
+        CropperAsset::register($this->view);
     }
 
     public function run()
