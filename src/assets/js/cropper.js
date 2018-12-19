@@ -7,7 +7,7 @@
  */
 
 (function ($) {
-    const image = $('#image');
+    const image = $(imageId);
 
     image.cropper({
         aspectRatio: 16 / 9,
