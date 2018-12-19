@@ -19,6 +19,8 @@ class Cropper extends Widget
     public function init()
     {
         parent::init();
+
+        CropperAsset::register($this->getView());
     }
 
     public function run()

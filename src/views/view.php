@@ -7,15 +7,9 @@
  * @since       19.12.18
  */
 
-use sabirov\cropper\CropperAsset;
-
 /**
  * @var $this \yii\web\View
  */
-
-CropperAsset::register($this);
-
-echo "просто кроппер";
 ?>
 <div>
     <img id="image" src="picture.jpg">
@@ -39,7 +33,7 @@ image.cropper({
 });
 
 // Get the Cropper.js instance after initialized
-var cropper = image.data('cropper');
+// var cropper = image.data('cropper');
 JS;
 
 $this->registerJs($initializeCropper);
