@@ -15,7 +15,8 @@ use yii\helpers\Html;
  */
 
 echo Html::img('/img/demo/profile3.jpg', [
-        'id' => $imageId
+        'id' => $imageId,
+    'class' => 'cropper-image'
 ]);
 
 /* passing variables to JS */
