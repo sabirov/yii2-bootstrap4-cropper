@@ -10,15 +10,13 @@
 namespace sabirov\cropper;
 
 use yii\widgets\InputWidget;
-use sabirov\cropper\assets\CropperAsset;
-use sabirov\cropper\assets\InitCropperAsset;
 
 class Cropper extends InputWidget
 {
     /**
-     * @var bool $modal Show crop box in modal window
+     * @var array $cropperOptions
      */
-    public $modal = false;
+    public $cropperOptions = [];
 
     /**
      * Initializes the widget.
@@ -29,20 +27,27 @@ class Cropper extends InputWidget
     {
         parent::init();
 
-        CropperAsset::register($this->getView());
-        InitCropperAsset::register($this->getView());
+
     }
 
     public function run()
     {
         $imageId = 'cropper-img-' . $this->options['id'];
 
-        if($this->modal){
-            return $this->render('modal', []);
+        return $this->render('view', [
+            'imageId' => $imageId
+        ]);
+    }
+
+    private function setcropperOptions()
+    {
+        $options = $this->cropperOptions;
+
+        /* preview */
+        if (isset($options['preview']) && !empty($options['preview'])) {
+
         } else {
-            return $this->render('view',[
-                'imageId' => $imageId
-            ]);
+            $options['preview'] = [];
         }
     }
 }

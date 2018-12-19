@@ -7,6 +7,8 @@
  * @since       19.12.18
  */
 
+use sabirov\cropper\assets\CropperAsset;
+use sabirov\cropper\assets\InitCropperAsset;
 use yii\helpers\Html;
 
 /**
@@ -14,8 +16,13 @@ use yii\helpers\Html;
  * @var $imageId string
  */
 
-echo Html::img('/img/demo/profile3.jpg', [
-        'id' => $imageId,
+$cropper_asset = CropperAsset::register($this);
+InitCropperAsset::register($this);
+
+$img_src = $cropper_asset->baseUrl . '/img/no-image.svg';
+
+echo Html::img($img_src, [
+    'id' => $imageId,
     'class' => 'cropper-image'
 ]);
 
