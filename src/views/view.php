@@ -14,6 +14,3 @@
 <div>
     <img id="image" src="picture.jpg">
 </div>
-
-<?php
-$this->registerJsFile('js/initializeCropper.js');
