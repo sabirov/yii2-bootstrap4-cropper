@@ -14,8 +14,11 @@ use yii\web\AssetBundle;
 class CropperAsset extends AssetBundle
 {
     public $sourcePath = '@npm';
-    public $css = [];
+    public $css = [
+        'cropperjs/dist/cropper.min.css'
+    ];
     public $js = [
+        'cropperjs/dist/cropper.min.js',
         'jquery-cropper/dist/jquery-cropper.min.js',
     ];
     public $depends = [
