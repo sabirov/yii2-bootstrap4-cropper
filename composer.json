@@ -17,8 +17,10 @@
   "minimum-stability": "dev",
   "prefer-stable": true,
   "require": {
+    "fxp/composer-asset-plugin": "^1.4.4",
     "php": ">=5.4.0",
     "yiisoft/yii2": "~2.0.6",
+    "npm-asset/cropperjs":"~1.4.3",
     "npm-asset/jquery-cropper": "~1.0.0"
   },
   "autoload": {
