@@ -10,6 +10,8 @@
 namespace sabirov\cropper;
 
 use yii\base\Widget;
+use sabirov\cropper\assets\CropperAsset;
+use sabirov\cropper\assets\InitCropperAsset;
 
 class Cropper extends Widget
 {
@@ -25,6 +27,7 @@ class Cropper extends Widget
         parent::init();
 
         CropperAsset::register($this->getView());
+        InitCropperAsset::register($this->getView());
     }
 
     public function run()

@@ -7,7 +7,7 @@
  * @since       15.12.18
  */
 
-namespace sabirov\cropper;
+namespace sabirov\cropper\assets;
 
 use yii\web\AssetBundle;
 
