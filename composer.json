@@ -1,30 +1,38 @@
 {
-    "name": "sabirov/yii2-bootstrap4-cropper",
-    "description": "Cropper for Yii2 which uses Bootstrap4",
-    "type": "yii2-extension",
-    "keywords": ["yii2","extension","bootstrap4","cropper"],
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Dmitriy Sabirov",
-            "email": "web8dew@yandex.ru"
-        }
-    ],
-    "minimum-stability": "dev",
-    "prefer-stable": true,
-    "require": {
-        "yiisoft/yii2": "~2.0.0",
-        "yiisoft/yii2-bootstrap4": "~1.0.0",
-        "npm-asset/jquery-cropper": "~1.0.0"
-    },
-    "autoload": {
-        "psr-4": {
-            "sabirov\\bootstrap4_cropper\\": "src"
-        }
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "1.0.x-dev"
-        }
+  "name": "sabirov/yii2-cropper",
+  "description": "Cropper for Yii2",
+  "type": "yii2-extension",
+  "keywords": [
+    "yii2",
+    "extension",
+    "cropper"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Dmitriy Sabirov",
+      "email": "web8dew@yandex.ru"
     }
+  ],
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require": {
+    "php": ">=5.4.0",
+    "yiisoft/yii2": "~2.0.6",
+    "npm-asset/jquery-cropper": "~1.0.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "sabirov\\cropper\\": "src"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0.x-dev"
+    },
+    "asset-installer-paths": {
+      "npm-asset-library": "vendor/npm",
+      "bower-asset-library": "vendor/bower"
+    }
+  }
 }

@@ -1,27 +1,24 @@
 <?php
+/**
+ * @author      Dmitriy Sabirov <web8dew@yandex.ru>
+ * @copyright   Dmitriy Sabirov 15.12.18
+ * @license     MIT
+ * @license     https://opensource.org/licenses/MIT
+ * @since       15.12.18
+ */
 
-namespace sabirov\bootstrap4_cropper;
-
+namespace sabirov\cropper;
 
 use yii\web\AssetBundle;
-use yii\web\View;
 
-/**
- * @author Ercan Bilgin <bilginnet@gmail.com>
- */
 class CropperAsset extends AssetBundle
 {
-    public $sourcePath = '@sabirov/bootstrap4_cropper/assets';
-    public $jsOptions = ['position' => View::POS_END];
-    public $css = [
-        'cropper.css',
-    ];
+    public $sourcePath = '@npm';
+    public $css = [];
     public $js = [
-        'cropper.js'
+        'jquery-cropper/dist/jquery-cropper.min.js',
     ];
     public $depends = [
-        'yii\web\YiiAsset',
-        'yii\bootstrap4\BootstrapAsset',
-        'yii\bootstrap4\BootstrapPluginAsset',
+        'yii\web\JqueryAsset',
     ];
 }
