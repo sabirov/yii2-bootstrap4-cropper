@@ -11,14 +11,15 @@ use yii\helpers\Html;
 
 /**
  * @var $this \yii\web\View
+ * @var $imageId string
  */
 
 echo Html::img('/img/demo/profile3.jpg', [
-        'id' => 'image'
+        'id' => $imageId
 ]);
 
+/* passing variables to JS */
 $passVariables = <<<JS
 const test = 'test';
 JS;
-
 Yii::$app->view->registerJs($passVariables, $this::POS_HEAD);
