@@ -13,8 +13,12 @@ use yii\base\Widget;
 
 class Cropper extends Widget
 {
-    /** @var bool Show crop box in modal window */
+    /**
+     * @var bool $modal Show crop box in modal window
+     * @var string $imageId preview pictures ID
+     */
     public $modal = false;
+    public $imageId = 'image';
 
     public function init()
     {
