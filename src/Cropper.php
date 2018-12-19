@@ -36,6 +36,7 @@ class Cropper extends InputWidget
     public function run()
     {
         $imageId = 'cropper-img-' . $this->options['id'];
+
         if($this->modal){
             return $this->render('modal', []);
         } else {
