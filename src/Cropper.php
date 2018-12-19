@@ -9,11 +9,11 @@
 
 namespace sabirov\cropper;
 
-use yii\base\Widget;
+use yii\widgets\InputWidget;
 use sabirov\cropper\assets\CropperAsset;
 use sabirov\cropper\assets\InitCropperAsset;
 
-class Cropper extends Widget
+class Cropper extends InputWidget
 {
     /**
      * @var bool $modal Show crop box in modal window
@@ -22,6 +22,11 @@ class Cropper extends Widget
     public $modal = false;
     public $imageId = 'image';
 
+    /**
+     * Initializes the widget.
+     *
+     * @throws \yii\base\InvalidConfigException
+     */
     public function init()
     {
         parent::init();
