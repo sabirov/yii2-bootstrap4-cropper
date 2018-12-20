@@ -10,7 +10,6 @@
 namespace sabirov\cropper;
 
 use yii\widgets\InputWidget;
-use sabirov\cropper\CropperAsset;
 
 class Cropper extends InputWidget
 {
@@ -28,7 +27,7 @@ class Cropper extends InputWidget
     {
         parent::init();
 
-        sabirov\cropper\CropperAsset::register($this->view);
+        CropperAsset::register($this->view);
     }
 
     public function run()
