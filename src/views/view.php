@@ -33,8 +33,8 @@ echo Html::img(
     ]
 );
 
-echo Html::button(Yii::t('cropper', 'Browse'), ['class' => 'btn btn-primary']);
-echo Html::button(Yii::t('cropper', 'Delete'), ['class' => 'btn btn-danger']);
+echo Html::button('Browse', ['class' => 'btn btn-primary']);
+echo Html::button('Delete', ['class' => 'btn btn-danger']);
 
 
 /* passing variables to JS */
