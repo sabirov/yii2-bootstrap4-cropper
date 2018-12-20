@@ -26,6 +26,6 @@ echo Html::img($img_src, [
 
 /* passing variables to JS */
 $passVariables = <<<JS
-const imageId = '#$imageId';
+const imageId = '$imageId';
 JS;
 Yii::$app->view->registerJs($passVariables, $this::POS_HEAD);
