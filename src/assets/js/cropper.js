@@ -8,10 +8,6 @@
  * @param {string} imageId
  */
 
-
-// import 'cropperjs/dist/cropper.css';
-import Cropper from 'cropperjs';
-
 const image = document.getElementById(imageId);
 const cropper = new Cropper(image, {
     aspectRatio: 16 / 9,

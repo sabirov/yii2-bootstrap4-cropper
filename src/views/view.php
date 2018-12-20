@@ -16,8 +16,9 @@ use yii\helpers\Html;
  */
 
 $asset = InitCropperAsset::register($this);
-
 $img_src = $asset->baseUrl . '/img/no-image.svg';
+
+$img_src = '/img/demo/profile.jpg';
 
 echo Html::img($img_src, [
     'id' => $imageId,
