@@ -101,7 +101,6 @@ class Cropper extends InputWidget
             $adjustedOptions['preview'] = $preview_arr;
         } else {
             $adjustedOptions['preview'] = [
-                'url' => $this->assetBaseUrl . '/img/no-image.svg',
                 'width' => '100px',
                 'height' => '100px'
             ];
