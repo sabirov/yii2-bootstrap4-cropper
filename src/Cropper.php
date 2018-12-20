@@ -14,9 +14,15 @@ use yii\widgets\InputWidget;
 class Cropper extends InputWidget
 {
     /**
+     * if not specified set url to no-image.svg
+     *
+     * @var string $imageUrl
+     */
+    public $imageUrl;
+
+    /**
      *  preview =
      *      [
-     *          url => 'path/to/preview', // if not specified get no-image.svg
      *          width => '100px', // may be with 'px', '%' and without any, by default '100px'
      *          height => '100px' // may be with 'px', '%' and without any, by default '100px'
      *      ]
@@ -40,6 +46,13 @@ class Cropper extends InputWidget
         $initCropperAsset = InitCropperAsset::register($this->view);
 
         $this->assetBaseUrl = $initCropperAsset->baseUrl;
+
+        if (isset($this->imageUrl) && !empty($this->imageUrl)) {
+            $this->imageUrl = trim($this->imageUrl);
+        } else {
+            $this->imageUrl = $this->assetBaseUrl . '/img/no-image.svg';
+        }
+
         $this->settingCropperOptions();
     }
 
@@ -49,6 +62,7 @@ class Cropper extends InputWidget
 
         return $this->render('view', [
             'imageId' => $imageId,
+            'imageUrl' => $this->imageUrl,
             'cropperOptions' => $this->cropperOptions
         ]);
     }
@@ -61,12 +75,6 @@ class Cropper extends InputWidget
         /* preview options */
         if (isset($options['preview']) && !empty($options['preview'])) {
             $preview_arr = [];
-
-            if (isset($options['preview']['url']) && !empty($options['preview']['url'])) {
-                $preview_arr['url'] = $options['preview']['url'];
-            } else {
-                $preview_arr['url'] = $this->assetBaseUrl . '/img/no-image.svg';
-            }
 
             if (isset($options['preview']['width']) && !empty($options['preview']['width'])) {
                 $width = preg_replace('/\s+/', '', $options['preview']['width']);

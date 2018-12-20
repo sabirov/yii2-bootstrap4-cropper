@@ -12,6 +12,7 @@ use yii\helpers\Html;
 /**
  * @var $this \yii\web\View
  * @var $imageId string
+ * @var $imageUrl string
  * @var $cropperOptions array
  */
 
@@ -24,10 +25,11 @@ $img_src = '/img/demo/profile.jpg';
 
 
 echo Html::img(
-    $cropperOptions['preview']['url'],
+    $imageUrl,
     [
         'width' => $cropperOptions['preview']['width'],
-        'height' => $cropperOptions['preview']['height']
+        'height' => $cropperOptions['preview']['height'],
+        'alt' => 'cropper image preview'
     ]
 );
 
