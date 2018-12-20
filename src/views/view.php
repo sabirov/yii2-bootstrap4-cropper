@@ -7,23 +7,30 @@
  * @since       19.12.18
  */
 
-use sabirov\cropper\InitCropperAsset;
 use yii\helpers\Html;
 
 /**
  * @var $this \yii\web\View
  * @var $imageId string
+ * @var $cropperOptions array
  */
-
-$asset = InitCropperAsset::register($this);
-$img_src = $asset->baseUrl . '/img/no-image.svg';
 
 $img_src = '/img/demo/profile.jpg';
 
-echo Html::img($img_src, [
-    'id' => $imageId,
-    'class' => 'cropper-image'
-]);
+//echo Html::img($img_src, [
+//    'id' => $imageId,
+//    'class' => 'cropper-image'
+//]);
+
+
+echo Html::img(
+    $cropperOptions['preview']['url'],
+    [
+        'width' => $cropperOptions['preview']['width'],
+        'height' => $cropperOptions['preview']['height']
+    ]
+);
+
 
 /* passing variables to JS */
 $passVariables = <<<JS
