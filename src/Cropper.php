@@ -16,7 +16,7 @@ class Cropper extends InputWidget
     /**
      *  preview =
      *      [
-     *          url => 'path/to/preview', // if not specified get from model attribute
+     *          url => 'path/to/preview', // if not specified get no-image.svg
      *          width => '100px', // may be with 'px', '%' and without any, by default '100px'
      *          height => '100px' // may be with 'px', '%' and without any, by default '100px'
      *      ]
@@ -64,8 +64,6 @@ class Cropper extends InputWidget
 
             if (isset($options['preview']['url']) && !empty($options['preview']['url'])) {
                 $preview_arr['url'] = $options['preview']['url'];
-            } elseif (isset($this->value) && !empty($this->value)) {
-                $preview_arr['url'] = $this->value;
             } else {
                 $preview_arr['url'] = $this->assetBaseUrl . '/img/no-image.svg';
             }
