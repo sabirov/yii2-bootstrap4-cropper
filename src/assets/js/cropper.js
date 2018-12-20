@@ -6,6 +6,11 @@
  * @since       19.12.18
  */
 
+/**
+ * @param {string} imageId
+ */
+
+
 // import 'cropperjs/dist/cropper.css';
 import Cropper from 'cropperjs';
 
