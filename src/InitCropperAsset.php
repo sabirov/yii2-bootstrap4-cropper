@@ -21,6 +21,6 @@ class InitCropperAsset extends AssetBundle
         'js/cropper.js'
     ];
     public $depends = [
-        'sabirov\cropper\assets\CropperAsset',
+        'sabirov\cropper\CropperAsset',
     ];
 }

@@ -4,9 +4,7 @@
  * @license     MIT
  * @license     https://opensource.org/licenses/MIT
  * @since       19.12.18
- */
-
-/**
+ *
  * @param {string} imageId
  */
 
