@@ -8,20 +8,17 @@
  */
 
 use yii\helpers\Html;
+use yii\bootstrap4\Modal;
 
 /**
  * @var $this \yii\web\View
  * @var $imageId string
  * @var $imageUrl string
  * @var $cropperOptions array
+ * @var $modalId string
  */
 
 $img_src = '/img/demo/profile.jpg';
-
-//echo Html::img($img_src, [
-//    'id' => $imageId,
-//    'class' => 'cropper-image'
-//]);
 
 ?>
     <div class="cropper-wrapper clearfix">
@@ -37,11 +34,32 @@ $img_src = '/img/demo/profile.jpg';
                 ) ?>
             </div>
             <div class="cropper-preview-buttons">
-                <?= Html::button('Change', ['class' => 'btn btn-primary']) ?>
+                <?= Html::button(
+                    'Change',
+                    [
+                        'class' => 'btn btn-primary',
+                        'type' => 'button',
+                        'data-toggle' => 'modal',
+                        'data-target' => $modalId
+                    ]
+                ) ?>
             </div>
         </div>
     </div>
 <?php
+Modal::begin([
+    'id'     => $modalId,
+    'class'  => 'modal',
+    'header' => '<h2>Hello world</h2>',
+    'footer' => 'Низ окна',
+]);
+
+echo Html::img($img_src, [
+    'id' => $imageId,
+    'class' => 'cropper-image'
+]);
+
+Modal::end();
 
 /* passing variables to JS */
 $passVariables = <<<JS

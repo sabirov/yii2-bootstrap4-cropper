@@ -6,6 +6,7 @@
  * @since       19.12.18
  *
  * @param {string} imageId
+ * @param {string} modalId
  */
 
 const image = document.getElementById(imageId);
