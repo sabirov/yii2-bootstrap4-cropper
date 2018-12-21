@@ -6,7 +6,6 @@
  * @since       19.12.18
  *
  * @param {string} imageId
- * @param {string} modalId
  */
 
 /*const image = document.getElementById(imageId);
@@ -25,9 +24,12 @@ if (image) {
     });
 }*/
 
-    document.querySelectorAll("[data-toggle='modal']").onclick = function(){
-        console.log(modalId);
-    };
+(function ($) {
+    $("button[data-toggle='modal']").on('click', function () {
+        const modalId = '#' + $(this).data('target');
+        $(modalId).modal('show');
+    });
+})(jQuery);
 
 //
 // $(document).ready(function() {
