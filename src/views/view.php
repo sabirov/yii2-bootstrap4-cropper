@@ -23,19 +23,25 @@ $img_src = '/img/demo/profile.jpg';
 //    'class' => 'cropper-image'
 //]);
 
+?>
+    <div class="cropper-wrapper clearfix">
+        <?php
 
-echo Html::img(
-    $imageUrl,
-    [
-        'width' => $cropperOptions['preview']['width'],
-        'height' => $cropperOptions['preview']['height'],
-        'alt' => 'cropper image preview'
-    ]
-);
 
-echo Html::button('Browse', ['class' => 'btn btn-primary']);
-echo Html::button('Delete', ['class' => 'btn btn-danger']);
+        echo Html::img(
+            $imageUrl,
+            [
+                'width' => $cropperOptions['preview']['width'],
+                'height' => $cropperOptions['preview']['height'],
+                'alt' => 'cropper image preview'
+            ]
+        );
 
+        echo Html::button('Change', ['class' => 'btn btn-primary']);
+
+        ?>
+    </div>
+<?php
 
 /* passing variables to JS */
 $passVariables = <<<JS
