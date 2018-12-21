@@ -9,10 +9,6 @@
  * @param {string} modalId
  */
 
-/*----------------------------------------
-        Document Ready
-    ----------------------------------------*/
-document.addEventListener('DOMContentLoaded', () => {
 /*const image = document.getElementById(imageId);
 if (image) {
     const cropper = new Cropper(image, {
@@ -43,4 +39,3 @@ if (image) {
 //         $(modalId).modal('show');
 //     });
 // });
-});
