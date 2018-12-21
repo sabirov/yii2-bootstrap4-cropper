@@ -57,17 +57,17 @@ Modal::begin([
     'size' => Modal::SIZE_LARGE
 ]);
 
-echo 'Проверка связи';
+//echo 'Проверка связи';
 
-/*echo Html::img($img_src, [
+echo Html::img($img_src, [
     'id' => $imageId,
     'class' => 'cropper-image'
-]);*/
+]);
 
 Modal::end();
 
 /* passing variables to JS */
 $passVariables = <<<JS
-const imageId = '$imageId';
+const imageId = '#'+'$imageId';
 JS;
 Yii::$app->view->registerJs($passVariables, $this::POS_HEAD);
