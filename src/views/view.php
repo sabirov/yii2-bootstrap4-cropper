@@ -52,8 +52,9 @@ $img_src = '/img/demo/profile.jpg';
 Modal::begin([
     'id'     => $modalId,
     'class'  => 'modal',
-    'header' => '<h2>Hello world</h2>',
+    'title' => 'Hello world',
     'footer' => 'Низ окна',
+    'size' => Modal::SIZE_LARGE
 ]);
 
 echo 'Проверка модального окна';
