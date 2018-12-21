@@ -25,21 +25,21 @@ $img_src = '/img/demo/profile.jpg';
 
 ?>
     <div class="cropper-wrapper clearfix">
-        <?php
-
-
-        echo Html::img(
-            $imageUrl,
-            [
-                'width' => $cropperOptions['preview']['width'],
-                'height' => $cropperOptions['preview']['height'],
-                'alt' => 'cropper image preview'
-            ]
-        );
-
-        echo Html::button('Change', ['class' => 'btn btn-primary']);
-
-        ?>
+        <div class="cropper-preview">
+            <div class="cropper-preview-img">
+                <?= Html::img(
+                    $imageUrl,
+                    [
+                        'width' => $cropperOptions['preview']['width'],
+                        'height' => $cropperOptions['preview']['height'],
+                        'alt' => 'cropper image preview'
+                    ]
+                ) ?>
+            </div>
+            <div class="cropper-preview-buttons">
+                <?= Html::button('Change', ['class' => 'btn btn-primary']) ?>
+            </div>
+        </div>
     </div>
 <?php
 
