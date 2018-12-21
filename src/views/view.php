@@ -51,23 +51,24 @@ $img_src = '/img/demo/profile.jpg';
 <?php
 Modal::begin([
     'id'     => $modalId,
-    'class'  => 'modal',
+    'class'  => 'modal fade',
     'title' => 'Hello world',
     'footer' => 'Низ окна',
     'size' => Modal::SIZE_LARGE
 ]);
 
-echo 'Проверка модального окна';
+echo 'Проверка связи';
 
-//echo Html::img($img_src, [
-//    'id' => $imageId,
-//    'class' => 'cropper-image'
-//]);
+/*echo Html::img($img_src, [
+    'id' => $imageId,
+    'class' => 'cropper-image'
+]);*/
 
 Modal::end();
 
 /* passing variables to JS */
 $passVariables = <<<JS
 const imageId = '$imageId';
+const modalId = '$modalId';
 JS;
 Yii::$app->view->registerJs($passVariables, $this::POS_HEAD);
