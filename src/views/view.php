@@ -7,8 +7,8 @@
  * @since       19.12.18
  */
 
-use yii\bootstrap4\Modal;
 use yii\helpers\Html;
+use yii\bootstrap4\Modal;
 
 /**
  * @var $this \yii\web\View
@@ -35,42 +35,23 @@ $img_src = '/img/demo/profile.jpg';
             </div>
             <div class="cropper-preview-buttons">
                 <?php
-                //                echo Html::button(
-                //                    'Change',
-                //                    [
-                //                        'class' => 'btn btn-primary',
-                //                        'type' => 'button',
-                //                        'data-toggle' => 'modal',
-                //                        'data-target' => $modalId
-                //                    ]
-                //                );
-                Modal::begin([
-                    'id' => $modalId,
-                    'toggleButton' => [
-                        'tag' => 'button',
-                        'class' => 'btn btn-lg btn-block btn-info',
-                        'label' => 'Нажмите здесь, забавная штука!',
-                    ],
-                    'header' => '<h2>Hello world</h2>',
-                    'footer' => 'Низ окна',
-                ]);
-
-                echo 'Проверка модального окна';
-
-                //echo Html::img($img_src, [
-                //    'id' => $imageId,
-                //    'class' => 'cropper-image'
-                //]);
-
-                Modal::end();
+                echo Html::button(
+                    'Change',
+                    [
+                        'class' => 'btn btn-primary',
+                        'type' => 'button',
+                        'data-toggle' => 'modal',
+                        'data-target' => $modalId
+                    ]
+                );
                 ?>
             </div>
         </div>
     </div>
 <?php
 Modal::begin([
-    'id' => $modalId,
-    'class' => 'modal',
+    'id'     => $modalId,
+    'class'  => 'modal',
     'header' => '<h2>Hello world</h2>',
     'footer' => 'Низ окна',
 ]);
