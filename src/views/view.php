@@ -54,10 +54,12 @@ Modal::begin([
     'footer' => 'Низ окна',
 ]);
 
-echo Html::img($img_src, [
-    'id' => $imageId,
-    'class' => 'cropper-image'
-]);
+echo 'Проверка модального окна';
+
+//echo Html::img($img_src, [
+//    'id' => $imageId,
+//    'class' => 'cropper-image'
+//]);
 
 Modal::end();
 
