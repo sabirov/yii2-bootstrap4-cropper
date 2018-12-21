@@ -9,6 +9,10 @@
  * @param {string} modalId
  */
 
+/*----------------------------------------
+        Document Ready
+    ----------------------------------------*/
+document.addEventListener('DOMContentLoaded', () => {
 /*const image = document.getElementById(imageId);
 if (image) {
     const cropper = new Cropper(image, {
@@ -25,13 +29,18 @@ if (image) {
     });
 }*/
 
-
-$(document).ready(function() {
-    // При клике по кнопке, с id="btnModal"
-    $(".btn-primary").click(function() {
+    document.querySelectorAll("[data-toggle='modal']").onclick = function(){
         console.log(modalId);
-        modalId = '#' + modalId;
-        // Открыть модальное окно с id="exampleModal"
-        $(modalId).modal('show');
-    });
+    };
+
+//
+// $(document).ready(function() {
+//     // При клике по кнопке, с id="btnModal"
+//     $(".btn-primary").click(function() {
+//         console.log(modalId);
+//         modalId = '#' + modalId;
+//         // Открыть модальное окно с id="exampleModal"
+//         $(modalId).modal('show');
+//     });
+// });
 });
