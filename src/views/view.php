@@ -57,8 +57,6 @@ Modal::begin([
     'size' => Modal::SIZE_LARGE
 ]);
 
-//echo 'Проверка связи';
-
 echo Html::img($img_src, [
     'id' => $imageId,
     'class' => 'cropper-image'
