@@ -77,6 +77,6 @@ Modal::end();
 
 /* passing variables to JS */
 $passVariables = <<<JS
-const browseButtonClass = '#'+'$browseButtonClass';
+const browseButtonClass = '$browseButtonClass';
 JS;
 Yii::$app->view->registerJs($passVariables, $this::POS_HEAD);
