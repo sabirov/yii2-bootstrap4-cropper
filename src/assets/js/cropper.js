@@ -9,7 +9,8 @@
  */
 
 (function ($) {
-    function readURL(input) {
+    $(document).on('change', '#image', function () {
+        const input = $(this);
         if (input.files && input.files[0]) {
             var reader = new FileReader();
             reader.onload = function (e) {
@@ -18,7 +19,18 @@
             reader.readAsDataURL(input.files[0]);
             setTimeout(initCropper, 1000);
         }
-    }
+    });
+
+    // function readURL(input) {
+    //     if (input.files && input.files[0]) {
+    //         var reader = new FileReader();
+    //         reader.onload = function (e) {
+    //             $('#blah').attr('src', e.target.result)
+    //         };
+    //         reader.readAsDataURL(input.files[0]);
+    //         setTimeout(initCropper, 1000);
+    //     }
+    // }
     function initCropper(){
         console.log("Came here")
         var image = document.getElementById('blah');

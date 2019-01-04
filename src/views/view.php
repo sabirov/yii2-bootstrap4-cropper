@@ -61,7 +61,7 @@ Modal::begin([
 
 //
 ?>
-    <input type="file" name="image" id="image" onchange="readURL(this);"/>
+    <input type="file" name="image" id="image" />
     <div class="image_container">
         <img id="blah" src="#" alt="your image" />
     </div>
