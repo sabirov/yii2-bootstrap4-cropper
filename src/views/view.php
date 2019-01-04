@@ -14,7 +14,7 @@ use yii\helpers\Html;
  * @var $this \yii\web\View
  * @var $imageId string
  * @var $imageUrl string
- * @var $cropperOptions array
+ * @var $extensionOptions array
  * @var $modalId string
  * @var $inputImageId string id of image input field
  */
@@ -25,8 +25,8 @@ use yii\helpers\Html;
                 <?= Html::img(
                     $imageUrl,
                     [
-                        'width' => $cropperOptions['preview']['width'],
-                        'height' => $cropperOptions['preview']['height'],
+                        'width' => $extensionOptions['preview']['width'],
+                        'height' => $extensionOptions['preview']['height'],
                         'alt' => 'cropper image preview'
                     ]
                 ) ?>
@@ -54,7 +54,7 @@ Modal::begin([
     'footer' => '<div class="input-group">
             <span class="input-group-btn">
                 <span class="btn btn-default btn-file">
-                    ' . $cropperOptions['browseButtonText'] . ' <input type="file" id="' . $inputImageId . '">
+                    ' . $extensionOptions['browseButtonText'] . ' <input type="file" id="' . $inputImageId . '">
                 </span>
             </span>
             <input type="text" class="form-control" readonly>

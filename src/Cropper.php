@@ -28,9 +28,9 @@ class Cropper extends InputWidget
      *      ],
      *  browseButtonText = 'Browse …'
      *
-     * @var array $cropperOptions
+     * @var array $extensionOptions
      */
-    public $cropperOptions = [];
+    public $extensionOptions = [];
 
     private $assetBaseUrl;
 
@@ -54,7 +54,7 @@ class Cropper extends InputWidget
             $this->imageUrl = $this->assetBaseUrl . '/img/no-image.svg';
         }
 
-        $this->settingCropperOptions();
+        $this->settingExtensionOptions();
     }
 
     public function run()
@@ -67,15 +67,15 @@ class Cropper extends InputWidget
         return $this->render('view', [
             'imageId' => $imageId,
             'imageUrl' => $this->imageUrl,
-            'cropperOptions' => $this->cropperOptions,
+            'extensionOptions' => $this->extensionOptions,
             'modalId' => $modalId,
             'inputImageId' => $inputImageId
         ]);
     }
 
-    private function settingCropperOptions()
+    private function settingExtensionOptions()
     {
-        $options = $this->cropperOptions;
+        $options = $this->extensionOptions;
         $adjustedOptions = [];
 
         /* preview options */
@@ -119,6 +119,6 @@ class Cropper extends InputWidget
             $adjustedOptions['browseButtonText'] = 'Browse …';
         }
 
-        $this->cropperOptions = $adjustedOptions;
+        $this->extensionOptions = $adjustedOptions;
     }
 }
