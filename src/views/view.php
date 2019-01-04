@@ -71,6 +71,14 @@ echo Html::tag(
     ])
 );
 
+echo Html::tag(
+    'div',
+    'Double-click to switch between moving the image and selecting the cropping area.',
+    [
+        'class' => 'alert alert-warning'
+    ]
+);
+
 Modal::end();
 
 /* passing variables to JS */
