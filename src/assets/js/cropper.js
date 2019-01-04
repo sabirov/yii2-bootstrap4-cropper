@@ -9,24 +9,22 @@
  */
 
 (function ($) {
-    $(document).on('change', '.btn-file :file', function() {
-        var input = $(this),
-            label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+    $(document).on('change', '.btn-file :file', function () {
+        const input = $(this);
+        let label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
         input.trigger('fileselect', [label]);
     });
 
-    $('.btn-file :file').on('fileselect', function(event, label) {
+    $('.btn-file :file').on('fileselect', function (event, label) {
+        let input = $(this).parents('.input-group').find(':text');
 
-        var input = $(this).parents('.input-group').find(':text'),
-            log = label;
-
-        if( input.length ) {
-            input.val(log);
+        if (input.length) {
+            input.val(label);
         } else {
-            if( log ) alert(log);
+            if (label) alert(label);
         }
-
     });
+
     function readURL(input) {
         if (input.files && input.files[0]) {
             var reader = new FileReader();
@@ -41,11 +39,11 @@
         }
     }
 
-    $("#imgInp").change(function(){
+    $("#imgInp").change(function () {
         readURL(this);
     });
 
-    function initCropper(){
+    function initCropper() {
         console.log("Came here")
         const image = document.getElementById('img-upload');
         const cropper = new Cropper(image, {
@@ -62,8 +60,8 @@
         });
 
         // On crop button clicked
-        document.getElementById('crop_button').addEventListener('click', function(){
-            var imgurl =  cropper.getCroppedCanvas().toDataURL();
+        document.getElementById('crop_button').addEventListener('click', function () {
+            var imgurl = cropper.getCroppedCanvas().toDataURL();
             var img = document.createElement("img");
             img.src = imgurl;
             document.getElementById("cropped_result").appendChild(img);

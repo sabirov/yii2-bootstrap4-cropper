@@ -18,8 +18,8 @@ use yii\helpers\Html;
  * @var $modalId string
  */
 
-$img_src = '/img/demo/profile.jpg';
 $img_src = '#';
+$imageId = 'img-upload';
 
 
 ?>
@@ -66,13 +66,11 @@ Modal::begin([
     'size' => Modal::SIZE_LARGE
 ]);
 
-//echo Html::img($img_src, [
-//    'id' => $imageId,
-//    'class' => 'sabirov-cropper-image'
-//]);
-?>
-        <img id='img-upload'/>
-<?php
+echo Html::img($img_src, [
+    'id' => $imageId,
+    'class' => 'sabirov-cropper-image',
+    'alt' => 'Cropper Image',
+]);
 
 Modal::end();
 
