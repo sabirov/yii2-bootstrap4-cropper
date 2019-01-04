@@ -65,7 +65,7 @@ Modal::begin([
 echo Html::img('#', [
     'id' => $imageId,
     'class' => 'sabirov-cropper-image',
-    'alt' => 'Choose a picture',
+    'alt' => 'Upload a picture',
 ]);
 
 Modal::end();
