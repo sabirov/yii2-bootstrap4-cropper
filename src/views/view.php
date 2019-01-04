@@ -59,13 +59,13 @@ Modal::begin([
 
 echo Html::img($img_src, [
     'id' => $imageId,
-    'class' => 'cropper-image'
+    'class' => 'sabirov-cropper-image'
 ]);
 
 Modal::end();
 
 /* passing variables to JS */
 $passVariables = <<<JS
-const imageId = '#'+'$imageId';
+const sabirovCropperImageId = '#'+'$imageId';
 JS;
 Yii::$app->view->registerJs($passVariables, $this::POS_HEAD);

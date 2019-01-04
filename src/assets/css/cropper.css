@@ -1,4 +1,4 @@
 /* Limit image width to avoid overflow the container */
-img.cropper-image {
+img.sabirov-cropper-image {
     max-width: 100%; /* This rule is very important, please do not ignore this! */
 }

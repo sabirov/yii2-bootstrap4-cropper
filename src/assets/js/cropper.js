@@ -5,11 +5,11 @@
  * @license     https://opensource.org/licenses/MIT
  * @since       19.12.18
  *
- * @param {string} imageId
+ * @param {string} sabirovCropperImageId
  */
 
 (function ($) {
-    let image = $(imageId)[0];
+    let image = $(sabirovCropperImageId)[0];
     if (image) {
         const cropper = new Cropper(image, {
             aspectRatio: 16 / 9,
