@@ -19,6 +19,8 @@ use yii\bootstrap4\Modal;
  */
 
 $img_src = '/img/demo/profile.jpg';
+$img_src = '#';
+
 
 ?>
     <div class="cropper-wrapper clearfix">
