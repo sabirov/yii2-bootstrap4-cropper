@@ -7,8 +7,8 @@
  * @since       19.12.18
  */
 
-use yii\helpers\Html;
 use yii\bootstrap4\Modal;
+use yii\helpers\Html;
 
 /**
  * @var $this \yii\web\View
@@ -52,8 +52,8 @@ $img_src = '#';
     </div>
 <?php
 Modal::begin([
-    'id'     => $modalId,
-    'class'  => 'modal fade',
+    'id' => $modalId,
+    'class' => 'modal fade',
     'title' => 'Cropping the Image',
     'footer' => 'Низ окна',
     'size' => Modal::SIZE_LARGE
@@ -61,12 +61,12 @@ Modal::begin([
 
 //
 ?>
-    <input type="file" name="image" id="image" />
+    <input type="file" name="image" id="image"/>
     <div class="image_container">
-        <img id="blah" src="#" alt="your image" />
+        <img id="blah" src="#" alt="your image"/>
     </div>
-    <div id="cropped_result"></div>        // Cropped image to display (only if u want)
-    <button id="crop_button">Crop</button> // Will trigger crop event
+    <div id="cropped_result"></div>       <!-- Cropped image to display (only if u want)-->
+    <button id="crop_button">Crop</button> <!-- Will trigger crop event-->
 <?php
 
 Modal::end();
