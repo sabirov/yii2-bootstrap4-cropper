@@ -68,7 +68,10 @@ echo Html::tag(
         'id' => $imageId,
         'class' => 'sabirov-cropper-image',
         'alt' => 'Upload a picture',
-    ])
+    ]),
+    [
+        'class' => 'cropper-wrapper'
+    ]
 );
 
 echo Html::tag(
@@ -76,9 +79,6 @@ echo Html::tag(
     'Double-click to switch between moving the image and selecting the cropping area.',
     [
         'class' => 'alert alert-warning cropper-warning'
-    ],
-    [
-        'class' => 'cropper-wrapper'
     ]
 );
 
