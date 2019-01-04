@@ -52,7 +52,7 @@ $img_src = '/img/demo/profile.jpg';
 Modal::begin([
     'id'     => $modalId,
     'class'  => 'modal fade',
-    'title' => 'Hello world',
+    'title' => 'Cropping the Image',
     'footer' => 'Низ окна',
     'size' => Modal::SIZE_LARGE
 ]);
