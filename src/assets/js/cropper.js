@@ -31,9 +31,9 @@
         if (input.files && input.files[0]) {
             var reader = new FileReader();
 
-            reader.onload = function (e) {
-                $('#img-upload').attr('src', e.target.result);
-            }
+            reader.onload = function (event) {
+                $('#img-upload').attr('src', event.target.result);
+            };
 
             reader.readAsDataURL(input.files[0]);
 
@@ -47,13 +47,18 @@
 
     function initCropper(){
         console.log("Came here")
-        var image = document.getElementById('img-upload');
-        var cropper = new Cropper(image, {
-            aspectRatio: 1 / 1,
-            crop: function(e) {
-                console.log(e.detail.x);
-                console.log(e.detail.y);
-            }
+        const image = document.getElementById('img-upload');
+        const cropper = new Cropper(image, {
+            aspectRatio: 16 / 9,
+            crop(event) {
+                console.log(event.detail.x);
+                console.log(event.detail.y);
+                console.log(event.detail.width);
+                console.log(event.detail.height);
+                console.log(event.detail.rotate);
+                console.log(event.detail.scaleX);
+                console.log(event.detail.scaleY);
+            },
         });
 
         // On crop button clicked
