@@ -75,7 +75,7 @@ echo Html::tag(
     'div',
     'Double-click to switch between moving the image and selecting the cropping area.',
     [
-        'class' => 'alert alert-warning'
+        'class' => 'alert alert-warning cropper-warning'
     ]
 );
 

@@ -47,7 +47,6 @@
     });
 
     function initCropper() {
-        // image = document.getElementById('img-upload');
         const image = $(imageId)[0];
         const cropper = new Cropper(image, {
             aspectRatio: 16 / 9,
@@ -61,6 +60,8 @@
                 console.log(event.detail.scaleY);
             },
         });
+
+        $('.cropper-warning').show();
 
         // On crop button clicked
         document.getElementById('crop_button').addEventListener('click', function () {
