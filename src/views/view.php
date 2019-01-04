@@ -62,11 +62,13 @@ Modal::begin([
     'size' => Modal::SIZE_LARGE
 ]);
 
+echo '<div>';
 echo Html::img('#', [
     'id' => $imageId,
     'class' => 'sabirov-cropper-image',
     'alt' => 'Upload a picture',
 ]);
+echo '</div>';
 
 Modal::end();
 
