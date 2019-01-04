@@ -2,8 +2,3 @@
 img.sabirov-cropper-image {
     max-width: 100%; /* This rule is very important, please do not ignore this! */
 }
-
-.modal-header {
-    display: flex !important;
-    flex-wrap: wrap !important;
-}
