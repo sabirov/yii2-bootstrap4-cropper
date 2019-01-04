@@ -32,9 +32,9 @@ class Cropper extends InputWidget
     public $cropperOptions = [];
 
     /**
-     * @var string class of "browse" button
+     * @var string class of "browse" span
      */
-    public $browseButtonClass = 'cropper-browse-button';
+    public $browseSpanClass = 'cropper-browse-span';
 
     private $assetBaseUrl;
 
@@ -72,7 +72,7 @@ class Cropper extends InputWidget
             'imageUrl' => $this->imageUrl,
             'cropperOptions' => $this->cropperOptions,
             'modalId' => $modalId,
-            'browseButtonClass' => $this->browseButtonClass
+            'browseSpanClass' => $this->browseSpanClass
         ]);
     }
 
