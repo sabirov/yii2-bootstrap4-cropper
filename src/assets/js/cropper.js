@@ -9,68 +9,39 @@
  */
 
 (function ($) {
-    $(document).on('change', '#image', function () {
-        const input = $(this);
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-            reader.onload = function (e) {
-                $('#blah').attr('src', e.target.result)
-            };
-            reader.readAsDataURL(input.files[0]);
-            setTimeout(initCropper, 1000);
-        }
+    $(document).on('change', '.btn-file :file', function() {
+        var input = $(this),
+            label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+        input.trigger('fileselect', [label]);
     });
 
-    // function readURL(input) {
-    //     if (input.files && input.files[0]) {
-    //         var reader = new FileReader();
-    //         reader.onload = function (e) {
-    //             $('#blah').attr('src', e.target.result)
-    //         };
-    //         reader.readAsDataURL(input.files[0]);
-    //         setTimeout(initCropper, 1000);
-    //     }
-    // }
-    function initCropper(){
-        console.log("Came here")
-        var image = document.getElementById('blah');
-        var cropper = new Cropper(image, {
-            aspectRatio: 1 / 1,
-            crop: function(e) {
-                console.log(e.detail.x);
-                console.log(e.detail.y);
+    $('.btn-file :file').on('fileselect', function(event, label) {
+
+        var input = $(this).parents('.input-group').find(':text'),
+            log = label;
+
+        if( input.length ) {
+            input.val(log);
+        } else {
+            if( log ) alert(log);
+        }
+
+    });
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#img-upload').attr('src', e.target.result);
             }
-        });
 
-        // On crop button clicked
-        document.getElementById('crop_button').addEventListener('click', function(){
-            var imgurl =  cropper.getCroppedCanvas().toDataURL();
-            var img = document.createElement("img");
-            img.src = imgurl;
-            document.getElementById("cropped_result").appendChild(img);
-
-            /* ---------------- SEND IMAGE TO THE SERVER-------------------------
-
-                cropper.getCroppedCanvas().toBlob(function (blob) {
-                      var formData = new FormData();
-                      formData.append('croppedImage', blob);
-                      // Use `jQuery.ajax` method
-                      $.ajax('/path/to/upload', {
-                        method: "POST",
-                        data: formData,
-                        processData: false,
-                        contentType: false,
-                        success: function () {
-                          console.log('Upload success');
-                        },
-                        error: function () {
-                          console.log('Upload error');
-                        }
-                      });
-                });
-            ----------------------------------------------------*/
-        })
+            reader.readAsDataURL(input.files[0]);
+        }
     }
+
+    $("#imgInp").change(function(){
+        readURL(this);
+    });
     // let image = $(sabirovCropperImageId)[0];
     // if (image) {
     //     const cropper = new Cropper(image, {

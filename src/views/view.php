@@ -59,14 +59,23 @@ Modal::begin([
     'size' => Modal::SIZE_LARGE
 ]);
 
-//
+//echo Html::img($img_src, [
+//    'id' => $imageId,
+//    'class' => 'sabirov-cropper-image'
+//]);
 ?>
-    <input type="file" name="image" id="image"/>
-    <div class="image_container">
-        <img id="blah" src="#" alt="your image"/>
+    <div class="form-group">
+        <label>Upload Image</label>
+        <div class="input-group">
+            <span class="input-group-btn">
+                <span class="btn btn-default btn-file">
+                    Browse… <input type="file" id="imgInp">
+                </span>
+            </span>
+            <input type="text" class="form-control" readonly>
+        </div>
+        <img id='img-upload'/>
     </div>
-    <div id="cropped_result"></div>       <!-- Cropped image to display (only if u want)-->
-    <button id="crop_button">Crop</button> <!-- Will trigger crop event-->
 <?php
 
 Modal::end();
