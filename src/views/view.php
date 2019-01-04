@@ -18,11 +18,6 @@ use yii\helpers\Html;
  * @var $modalId string
  * @var $inputImageId string id of image input field
  */
-
-$img_src = '#';
-$imageId = 'img-upload';
-
-
 ?>
     <div class="cropper-wrapper clearfix">
         <div class="cropper-preview">
@@ -67,10 +62,10 @@ Modal::begin([
     'size' => Modal::SIZE_LARGE
 ]);
 
-echo Html::img($img_src, [
+echo Html::img('#', [
     'id' => $imageId,
     'class' => 'sabirov-cropper-image',
-    'alt' => 'Cropper Image',
+    'alt' => 'Choose a picture',
 ]);
 
 Modal::end();
