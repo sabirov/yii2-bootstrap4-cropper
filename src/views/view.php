@@ -55,27 +55,20 @@ Modal::begin([
     'id' => $modalId,
     'class' => 'modal fade',
     'title' => 'Cropping the Image',
-    'footer' => 'Низ окна',
-    'size' => Modal::SIZE_LARGE
-]);
-
-//echo Html::img($img_src, [
-//    'id' => $imageId,
-//    'class' => 'sabirov-cropper-image'
-//]);
-?>
-    <div class="form-group">
-        <label>Upload Image</label>
-        <div class="input-group">
+    'footer' => '<div class="input-group">
             <span class="input-group-btn">
                 <span class="btn btn-default btn-file">
                     Browse… <input type="file" id="imgInp">
                 </span>
             </span>
             <input type="text" class="form-control" readonly>
-        </div>
+        </div>        
+    </div>',
+    'size' => Modal::SIZE_LARGE
+]);
+?>
+    <div class="form-group">
         <img id='img-upload'/>
-    </div>
 <?php
 
 Modal::end();
