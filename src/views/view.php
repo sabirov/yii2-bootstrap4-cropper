@@ -16,6 +16,7 @@ use yii\helpers\Html;
  * @var $imageUrl string
  * @var $cropperOptions array
  * @var $modalId string
+ * @var $browseButtonClass string
  */
 
 $img_src = '#';
@@ -57,9 +58,9 @@ Modal::begin([
     'title' => 'Cropping the Image',
     'footer' => '<div class="input-group">
             <span class="input-group-btn">
-                <span class="btn btn-default btn-file">
+                <button class="btn btn-default ' . $browseButtonClass . '">
                     Browse… <input type="file" id="imgInp">
-                </span>
+                </button>
             </span>
             <input type="text" class="form-control" readonly>
         </div>',
@@ -76,6 +77,6 @@ Modal::end();
 
 /* passing variables to JS */
 $passVariables = <<<JS
-const sabirovCropperImageId = '#'+'$imageId';
+const browseButtonClass = '#'+'$browseButtonClass';
 JS;
 Yii::$app->view->registerJs($passVariables, $this::POS_HEAD);

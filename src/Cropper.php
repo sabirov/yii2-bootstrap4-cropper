@@ -25,11 +25,16 @@ class Cropper extends InputWidget
      *      [
      *          width => '100px', // may be with 'px', '%' and without any, by default '100px'
      *          height => '100px' // may be with 'px', '%' and without any, by default '100px'
-     *      ]
+     *      ],
      *
      * @var array $cropperOptions
      */
     public $cropperOptions = [];
+
+    /**
+     * @var string class of "browse" button
+     */
+    public $browseButtonClass = 'cropper-browse-button';
 
     private $assetBaseUrl;
 
@@ -66,7 +71,8 @@ class Cropper extends InputWidget
             'imageId' => $imageId,
             'imageUrl' => $this->imageUrl,
             'cropperOptions' => $this->cropperOptions,
-            'modalId' => $modalId
+            'modalId' => $modalId,
+            'browseButtonClass' => $this->browseButtonClass
         ]);
     }
 

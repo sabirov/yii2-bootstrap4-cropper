@@ -6,16 +6,19 @@
  * @since       19.12.18
  *
  * @param {string} sabirovCropperImageId
+ * @param {string} browseButtonClass
  */
 
 (function ($) {
-    $(document).on('change', '.btn-file :file', function () {
+    const browseButtonSelector = '.' + browseButtonClass + ' :file';
+
+    $(document).on('change', browseButtonSelector, function () {
         const input = $(this);
         let label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
         input.trigger('fileselect', [label]);
     });
 
-    $('.btn-file :file').on('fileselect', function (event, label) {
+    $(browseButtonSelector).on('fileselect', function (event, label) {
         let input = $(this).parents('.input-group').find(':text');
 
         if (input.length) {
