@@ -59,10 +59,15 @@ Modal::begin([
     'size' => Modal::SIZE_LARGE
 ]);
 
-echo Html::img($img_src, [
-    'id' => $imageId,
-    'class' => 'sabirov-cropper-image'
-]);
+//
+?>
+    <input type="file" name="image" id="image" onchange="readURL(this);"/>
+    <div class="image_container">
+        <img id="blah" src="#" alt="your image" />
+    </div>
+    <div id="cropped_result"></div>        // Cropped image to display (only if u want)
+    <button id="crop_button">Crop</button> // Will trigger crop event
+<?php
 
 Modal::end();
 
