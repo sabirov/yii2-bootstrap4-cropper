@@ -19,7 +19,7 @@ use yii\helpers\Html;
  * @var $inputImageId string id of image input field
  */
 ?>
-    <div class="cropper-wrapper clearfix">
+    <div class="clearfix">
         <div class="cropper-preview">
             <div class="cropper-preview-img">
                 <?= Html::img(
