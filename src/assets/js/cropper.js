@@ -11,6 +11,7 @@
 
 (function ($) {
     const browseSelector = '.btn-file :file';
+    let cropper;
 
     $(document).on('change', browseSelector, function () {
         const input = $(this);
@@ -47,8 +48,12 @@
     });
 
     function initCropper() {
+        if (typeof (cropper) !== 'undefined') {
+            cropper.destroy();
+        }
+
         const image = $(imageId)[0];
-        const cropper = new Cropper(image, {
+        cropper = new Cropper(image, {
             aspectRatio: 16 / 9,
             crop(event) {
                 console.log(event.detail.x);
