@@ -62,12 +62,15 @@ Modal::begin([
                 </span>
             </span>
             <input type="text" class="form-control" readonly>
-        </div>        
-    </div>',
+        </div>',
     'size' => Modal::SIZE_LARGE
 ]);
+
+//echo Html::img($img_src, [
+//    'id' => $imageId,
+//    'class' => 'sabirov-cropper-image'
+//]);
 ?>
-    <div class="form-group">
         <img id='img-upload'/>
 <?php
 
