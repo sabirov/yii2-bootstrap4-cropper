@@ -26,6 +26,7 @@ class Cropper extends InputWidget
      *          width => '100px', // may be with 'px', '%' and without any, by default '100px'
      *          height => '100px' // may be with 'px', '%' and without any, by default '100px'
      *      ],
+     *  browseButtonText = 'Browse …'
      *
      * @var array $cropperOptions
      */
@@ -61,12 +62,14 @@ class Cropper extends InputWidget
         $thisId = $this->options['id'];
         $imageId = 'cropper-img-' . $thisId;
         $modalId = 'cropper-modal-' . $thisId;
+        $inputImageId = 'cropper-input-image-' . $thisId;
 
         return $this->render('view', [
             'imageId' => $imageId,
             'imageUrl' => $this->imageUrl,
             'cropperOptions' => $this->cropperOptions,
-            'modalId' => $modalId
+            'modalId' => $modalId,
+            'inputImageId' => $inputImageId
         ]);
     }
 
@@ -107,6 +110,13 @@ class Cropper extends InputWidget
                 'width' => '100px',
                 'height' => '100px'
             ];
+        }
+
+        /* browse button text */
+        if (isset($options['browseButtonText']) && !empty($options['browseButtonText'])) {
+            $adjustedOptions['browseButtonText'] = trim($options['browseButtonText']);
+        } else {
+            $adjustedOptions['browseButtonText'] = 'Browse …';
         }
 
         $this->cropperOptions = $adjustedOptions;

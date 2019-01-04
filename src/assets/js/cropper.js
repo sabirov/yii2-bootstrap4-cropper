@@ -5,7 +5,8 @@
  * @license     https://opensource.org/licenses/MIT
  * @since       19.12.18
  *
- * @param {string} sabirovCropperImageId
+ * @param {string} inputImageId id of image input field
+ * @param {string} imageId id of cropper image
  */
 
 (function ($) {
@@ -32,7 +33,7 @@
             var reader = new FileReader();
 
             reader.onload = function (event) {
-                $('#img-upload').attr('src', event.target.result);
+                $(imageId).attr('src', event.target.result);
             };
 
             reader.readAsDataURL(input.files[0]);
@@ -41,13 +42,13 @@
         }
     }
 
-    $("#imgInp").change(function () {
+    $(inputImageId).on('change', function () {
         readURL(this);
     });
 
     function initCropper() {
-        console.log("Came here")
-        const image = document.getElementById('img-upload');
+        // image = document.getElementById('img-upload');
+        const image = $(imageId)[0];
         const cropper = new Cropper(image, {
             aspectRatio: 16 / 9,
             crop(event) {
