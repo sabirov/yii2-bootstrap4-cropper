@@ -9,5 +9,6 @@ img.sabirov-cropper-image {
 
 .cropper-warning {
     margin-top: 1rem;
+    margin-bottom: 0;
     display: none;
 }

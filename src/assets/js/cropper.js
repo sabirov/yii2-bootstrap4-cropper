@@ -35,11 +35,10 @@
 
             reader.onload = function (event) {
                 $(imageId).attr('src', event.target.result);
+                initCropper();
             };
 
             reader.readAsDataURL(input.files[0]);
-
-            setTimeout(initCropper, 1000);
         }
     }
 
