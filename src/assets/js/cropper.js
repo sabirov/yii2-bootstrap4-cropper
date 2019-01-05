@@ -7,11 +7,14 @@
  *
  * @param {string} inputImageId id of image input field
  * @param {string} imageId id of cropper image
+ * @param {string} cropperOptions json encode cropper options
  */
 
 (function ($) {
     const browseSelector = '.btn-file :file';
     let cropper;
+
+    console.log(cropperOptions);
 
     $(document).on('change', browseSelector, function () {
         const input = $(this);
@@ -52,18 +55,22 @@
         }
 
         const image = $(imageId)[0];
-        cropper = new Cropper(image, {
-            aspectRatio: 16 / 9,
-            crop(event) {
-                console.log(event.detail.x);
-                console.log(event.detail.y);
-                console.log(event.detail.width);
-                console.log(event.detail.height);
-                console.log(event.detail.rotate);
-                console.log(event.detail.scaleX);
-                console.log(event.detail.scaleY);
-            },
-        });
+        cropper = new Cropper(
+            image,
+            cropperOptions
+            /*{
+                aspectRatio: 16 / 9,
+                crop(event) {
+                    console.log(event.detail.x);
+                    console.log(event.detail.y);
+                    console.log(event.detail.width);
+                    console.log(event.detail.height);
+                    console.log(event.detail.rotate);
+                    console.log(event.detail.scaleX);
+                    console.log(event.detail.scaleY);
+                },
+            }*/
+        );
 
         $('.cropper-warning').show();
 

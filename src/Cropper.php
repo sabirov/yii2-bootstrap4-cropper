@@ -16,7 +16,7 @@ class Cropper extends InputWidget
     /**
      * if not specified set url to no-image.svg
      *
-     * @var string $imageUrl
+     * @var string
      */
     public $imageUrl;
 
@@ -28,9 +28,15 @@ class Cropper extends InputWidget
      *      ],
      *  browseButtonText = 'Browse …'
      *
-     * @var array $extensionOptions
+     * @var array
      */
     public $extensionOptions = [];
+
+    /**
+     * @see https://github.com/fengyuanchen/cropperjs/blob/master/README.md#options
+     * @var array options for cropperjs
+     */
+    public $cropperOptions = [];
 
     private $assetBaseUrl;
 
@@ -54,6 +60,8 @@ class Cropper extends InputWidget
             $this->imageUrl = $this->assetBaseUrl . '/img/no-image.svg';
         }
 
+        $this->cropperOptions['aspectRatio'] = 1;
+
         $this->settingExtensionOptions();
     }
 
@@ -69,7 +77,8 @@ class Cropper extends InputWidget
             'imageUrl' => $this->imageUrl,
             'extensionOptions' => $this->extensionOptions,
             'modalId' => $modalId,
-            'inputImageId' => $inputImageId
+            'inputImageId' => $inputImageId,
+            'cropperOptions' => $this->cropperOptions
         ]);
     }
 

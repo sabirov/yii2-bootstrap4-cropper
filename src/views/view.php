@@ -9,6 +9,7 @@
 
 use yii\bootstrap4\Modal;
 use yii\helpers\Html;
+use yii\helpers\Json;
 
 /**
  * @var $this \yii\web\View
@@ -17,7 +18,10 @@ use yii\helpers\Html;
  * @var $extensionOptions array
  * @var $modalId string
  * @var $inputImageId string id of image input field
+ * @var $cropperOptions array options for cropperjs
  */
+
+$cropperOptions = Json::encode($cropperOptions);
 ?>
     <div class="clearfix">
         <div class="cropper-preview">
@@ -88,5 +92,6 @@ Modal::end();
 $passVariables = <<<JS
 const inputImageId = '#'+'$inputImageId';
 const imageId = '#'+'$imageId';
+const cropperOptions = '$cropperOptions';
 JS;
 Yii::$app->view->registerJs($passVariables, $this::POS_HEAD);
