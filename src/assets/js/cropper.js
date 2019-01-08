@@ -9,6 +9,7 @@
  * @param {string} imageId id of cropper image
  * @param {string} cropperOptions json encode cropper options
  * @param {string} cropButtonId id of Crop button
+ * @param {string} cropDataAttributeId id of hidden field for cropper data storage
  */
 
 (function ($) {
@@ -16,6 +17,7 @@
     let cropper;
     const cropperOptionsObj = JSON.parse(cropperOptions);
 
+    console.log(cropDataAttributeId);
     // console.log(cropperOptionsObj);
 
     $(document).on('change', browseSelector, function () {
@@ -58,7 +60,7 @@
 
         const image = $(imageId)[0];
         /* add Cropper events*/
-        image.addEventListener('crop', (event) => {
+        /*image.addEventListener('crop', (event) => {
             console.log(event.detail.x);
             console.log(event.detail.y);
             console.log(event.detail.width);
@@ -66,7 +68,7 @@
             console.log(event.detail.rotate);
             console.log(event.detail.scaleX);
             console.log(event.detail.scaleY);
-        });
+        });*/
         /* initialize Cropper */
         cropper = new Cropper(
             image,
@@ -74,7 +76,10 @@
         );
 
         $('.cropper-warning').show();
-        $('body').scrollTo(imageId);
+
+        $(cropButtonId).on('click', function () {
+            console.log(cropper.getData());
+        })
 
         // On crop button clicked
         // document.getElementById('crop_button').addEventListener('click', function () {

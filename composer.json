@@ -21,7 +21,8 @@
     "php": ">=5.4.0",
     "yiisoft/yii2": "~2.0.6",
     "yiisoft/yii2-bootstrap4": "~1.0.0",
-    "npm-asset/cropperjs":"~1.4.3"
+    "npm-asset/cropperjs": "~1.4.3",
+    "yiisoft/yii2-imagine": "*"
   },
   "autoload": {
     "psr-4": {

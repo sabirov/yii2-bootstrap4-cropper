@@ -20,6 +20,8 @@ use yii\helpers\Json;
  * @var $inputImageId string id of image input field
  * @var $cropperOptions array options for cropperjs
  * @var $cropButtonId string id of Crop button
+ * @var $cropDataAttribute string attribute to save and pass cropper data
+ * @var $cropDataAttributeId string
  */
 
 $cropperOptions = Json::encode($cropperOptions);
@@ -108,5 +110,6 @@ const inputImageId = '#'+'$inputImageId';
 const imageId = '#'+'$imageId';
 const cropperOptions = '$cropperOptions';
 const cropButtonId = '#'+'$cropButtonId';
+const cropDataAttributeId = '#' + '$cropDataAttributeId';
 JS;
 Yii::$app->view->registerJs($passVariables, $this::POS_HEAD);
