@@ -55,17 +55,19 @@ Modal::begin([
     'id' => $modalId,
     'class' => 'modal fade',
     'title' => 'Cropping the Image',
-    'footer' => '<div class="input-group">
-            <span class="input-group-btn">
-                <span class="btn btn-default btn-file">
-                    ' . $extensionOptions['browseButtonText'] . ' <input type="file" id="' . $inputImageId . '">
-                </span>
-            </span>
-            <input type="text" class="form-control" readonly>
-        </div>',
+    'footer' => '',
     'size' => Modal::SIZE_LARGE
 ]);
-
+?>
+    <div class="input-group">
+            <span class="input-group-btn">
+                <span class="btn btn-default btn-file">
+                    <?= $extensionOptions['browseButtonText'] ?> <input type="file" id="<?= $inputImageId ?>">
+                </span>
+            </span>
+        <input type="text" class="form-control" readonly>
+    </div>'
+<?php
 echo Html::tag(
     'div',
     Html::img('#', [
