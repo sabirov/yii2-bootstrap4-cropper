@@ -73,6 +73,7 @@
         );
 
         $('.cropper-warning').show();
+        $('body').scrollTo(imageId);
 
         // On crop button clicked
         document.getElementById('crop_button').addEventListener('click', function () {

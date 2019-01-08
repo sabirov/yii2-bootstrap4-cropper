@@ -66,7 +66,7 @@ Modal::begin([
                 </span>
             </span>
         <input type="text" class="form-control" readonly>
-    </div>'
+    </div>
 <?php
 echo Html::tag(
     'div',
