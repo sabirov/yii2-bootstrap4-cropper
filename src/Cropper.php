@@ -60,7 +60,7 @@ class Cropper extends InputWidget
             $this->imageUrl = $this->assetBaseUrl . '/img/no-image.svg';
         }
 
-        $this->cropperOptions['aspectRatio'] = 1;
+        $this->cropperOptions['aspectRatio'] = 16 / 9;
 
         $this->settingExtensionOptions();
     }

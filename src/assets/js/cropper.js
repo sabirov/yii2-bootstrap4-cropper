@@ -13,8 +13,18 @@
 (function ($) {
     const browseSelector = '.btn-file :file';
     let cropper;
+    cropperOptions['crop(event)'] = '{\n' +
+        '                    console.log(event.detail.x);\n' +
+        '                    console.log(event.detail.y);\n' +
+        '                    console.log(event.detail.width);\n' +
+        '                    console.log(event.detail.height);\n' +
+        '                    console.log(event.detail.rotate);\n' +
+        '                    console.log(event.detail.scaleX);\n' +
+        '                    console.log(event.detail.scaleY);\n' +
+        '                }';
+    const cropperOptionsObj = JSON.parse(cropperOptions);
 
-    console.log(cropperOptions);
+    console.log(cropperOptionsObj);
 
     $(document).on('change', browseSelector, function () {
         const input = $(this);
@@ -57,7 +67,7 @@
         const image = $(imageId)[0];
         cropper = new Cropper(
             image,
-            cropperOptions
+            cropperOptionsObj
             /*{
                 aspectRatio: 16 / 9,
                 crop(event) {
