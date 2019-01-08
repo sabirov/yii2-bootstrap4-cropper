@@ -23,7 +23,7 @@ use yii\helpers\Json;
 
 $cropperOptions = Json::encode($cropperOptions);
 ?>
-    <div class="clearfix">
+    <div class="cropper-wrapper clearfix">
         <div class="cropper-preview">
             <div class="cropper-preview-img">
                 <?= Html::img(
@@ -72,10 +72,7 @@ echo Html::tag(
         'id' => $imageId,
         'class' => 'sabirov-cropper-image',
         'alt' => 'Upload a picture',
-    ]),
-    [
-        'class' => 'cropper-wrapper'
-    ]
+    ])
 );
 
 echo Html::tag(
