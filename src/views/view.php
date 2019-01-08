@@ -19,6 +19,7 @@ use yii\helpers\Json;
  * @var $modalId string
  * @var $inputImageId string id of image input field
  * @var $cropperOptions array options for cropperjs
+ * @var $cropButtonId string id of Crop button
  */
 
 $cropperOptions = Json::encode($cropperOptions);
@@ -55,11 +56,24 @@ Modal::begin([
     'id' => $modalId,
     'class' => 'modal fade',
     'title' => 'Cropping the Image',
-    'footer' => '',
+    'footer' => Html::button(
+            'Crop',
+            [
+                'id' => $cropButtonId,
+                'class' => 'btn btn-primary'
+            ]
+        ) .
+        Html::button(
+            'Close',
+            [
+                'class' => 'btn btn-secondary'
+            ]
+        )
+    ,
     'size' => Modal::SIZE_LARGE
 ]);
 ?>
-    <div class="input-group">
+    <div class="input-group cropper-browse-group">
             <span class="input-group-btn">
                 <span class="btn btn-default btn-file">
                     <?= $extensionOptions['browseButtonText'] ?> <input type="file" id="<?= $inputImageId ?>">
@@ -92,5 +106,6 @@ $passVariables = <<<JS
 const inputImageId = '#'+'$inputImageId';
 const imageId = '#'+'$imageId';
 const cropperOptions = '$cropperOptions';
+const cropButtonId = '#'+'$cropButtonId';
 JS;
 Yii::$app->view->registerJs($passVariables, $this::POS_HEAD);

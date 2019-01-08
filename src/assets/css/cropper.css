@@ -3,6 +3,10 @@ img.sabirov-cropper-image {
     max-width: 100%; /* This rule is very important, please do not ignore this! */
 }
 
+.cropper-browse-group {
+    margin-bottom: 1rem;
+}
+
 .cropper-warning {
     margin-top: 1rem;
     margin-bottom: 0;

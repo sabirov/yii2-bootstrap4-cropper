@@ -8,6 +8,7 @@
  * @param {string} inputImageId id of image input field
  * @param {string} imageId id of cropper image
  * @param {string} cropperOptions json encode cropper options
+ * @param {string} cropButtonId id of Crop button
  */
 
 (function ($) {
@@ -76,11 +77,11 @@
         $('body').scrollTo(imageId);
 
         // On crop button clicked
-        document.getElementById('crop_button').addEventListener('click', function () {
-            var imgurl = cropper.getCroppedCanvas().toDataURL();
-            var img = document.createElement("img");
-            img.src = imgurl;
-            document.getElementById("cropped_result").appendChild(img);
+        // document.getElementById('crop_button').addEventListener('click', function () {
+        //     var imgurl = cropper.getCroppedCanvas().toDataURL();
+        //     var img = document.createElement("img");
+        //     img.src = imgurl;
+        //     document.getElementById("cropped_result").appendChild(img);
 
             /* ---------------- SEND IMAGE TO THE SERVER-------------------------
 
@@ -102,7 +103,7 @@
                       });
                 });
             ----------------------------------------------------*/
-        })
+        // })
     }
 
     $("button[data-toggle='modal']").on('click', function () {

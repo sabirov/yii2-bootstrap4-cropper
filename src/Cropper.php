@@ -69,6 +69,7 @@ class Cropper extends InputWidget
         $imageId = 'cropper-img-' . $thisId;
         $modalId = 'cropper-modal-' . $thisId;
         $inputImageId = 'cropper-input-image-' . $thisId;
+        $cropButtonId = 'cropper-crop-btn-' . $thisId;
 
         return $this->render('view', [
             'imageId' => $imageId,
@@ -76,7 +77,8 @@ class Cropper extends InputWidget
             'extensionOptions' => $this->extensionOptions,
             'modalId' => $modalId,
             'inputImageId' => $inputImageId,
-            'cropperOptions' => $this->cropperOptions
+            'cropperOptions' => $this->cropperOptions,
+            'cropButtonId' => $cropButtonId
         ]);
     }
 
