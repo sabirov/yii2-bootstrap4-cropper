@@ -15,7 +15,7 @@
     let cropper;
     const cropperOptionsObj = JSON.parse(cropperOptions);
 
-    console.log(cropperOptionsObj);
+    // console.log(cropperOptionsObj);
 
     $(document).on('change', browseSelector, function () {
         const input = $(this);
@@ -56,8 +56,8 @@
         }
 
         const image = $(imageId)[0];
-
-        image.addEventListener('crop', function (event) {
+        /* add Cropper events*/
+        image.addEventListener('crop', (event) => {
             console.log(event.detail.x);
             console.log(event.detail.y);
             console.log(event.detail.width);
@@ -66,7 +66,7 @@
             console.log(event.detail.scaleX);
             console.log(event.detail.scaleY);
         });
-
+        /* initialize Cropper */
         cropper = new Cropper(
             image,
             cropperOptionsObj
@@ -104,22 +104,6 @@
         })
     }
 
-    // let image = $(sabirovCropperImageId)[0];
-    // if (image) {
-    //     const cropper = new Cropper(image, {
-    //         aspectRatio: 16 / 9,
-    //         crop(event) {
-    //             console.log(event.detail.x);
-    //             console.log(event.detail.y);
-    //             console.log(event.detail.width);
-    //             console.log(event.detail.height);
-    //             console.log(event.detail.rotate);
-    //             console.log(event.detail.scaleX);
-    //             console.log(event.detail.scaleY);
-    //         },
-    //     });
-    // }
-    //
     $("button[data-toggle='modal']").on('click', function () {
         const modalId = '#' + $(this).data('target');
         $(modalId).modal('show');
