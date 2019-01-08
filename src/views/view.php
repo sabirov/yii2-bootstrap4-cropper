@@ -66,7 +66,8 @@ Modal::begin([
         Html::button(
             'Close',
             [
-                'class' => 'btn btn-secondary'
+                'class' => 'btn btn-secondary',
+                'data-dismiss' => 'modal'
             ]
         )
     ,
