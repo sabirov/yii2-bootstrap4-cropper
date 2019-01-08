@@ -13,15 +13,6 @@
 (function ($) {
     const browseSelector = '.btn-file :file';
     let cropper;
-    cropperOptions['crop(event)'] = '{\n' +
-        '                    console.log(event.detail.x);\n' +
-        '                    console.log(event.detail.y);\n' +
-        '                    console.log(event.detail.width);\n' +
-        '                    console.log(event.detail.height);\n' +
-        '                    console.log(event.detail.rotate);\n' +
-        '                    console.log(event.detail.scaleX);\n' +
-        '                    console.log(event.detail.scaleY);\n' +
-        '                }';
     const cropperOptionsObj = JSON.parse(cropperOptions);
 
     console.log(cropperOptionsObj);
@@ -65,21 +56,20 @@
         }
 
         const image = $(imageId)[0];
+
+        image.addEventListener('crop', function (event) {
+            console.log(event.detail.x);
+            console.log(event.detail.y);
+            console.log(event.detail.width);
+            console.log(event.detail.height);
+            console.log(event.detail.rotate);
+            console.log(event.detail.scaleX);
+            console.log(event.detail.scaleY);
+        });
+
         cropper = new Cropper(
             image,
             cropperOptionsObj
-            /*{
-                aspectRatio: 16 / 9,
-                crop(event) {
-                    console.log(event.detail.x);
-                    console.log(event.detail.y);
-                    console.log(event.detail.width);
-                    console.log(event.detail.height);
-                    console.log(event.detail.rotate);
-                    console.log(event.detail.scaleX);
-                    console.log(event.detail.scaleY);
-                },
-            }*/
         );
 
         $('.cropper-warning').show();
