@@ -12,6 +12,9 @@
  * @param {string} cropDataAttributeId id of hidden field for cropper data storage
  */
 
+// import 'cropperjs/dist/cropper.css';
+// import Cropper from 'cropperjs';
+
 (function ($) {
     const browseSelector = '.btn-file :file';
     let cropper;

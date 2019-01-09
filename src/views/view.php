@@ -14,7 +14,7 @@ use yii\helpers\Json;
 /**
  * @var $this \yii\web\View
  * @var $imageId string
- * @var $imageUrl string
+ * @var $previewImageUrl string
  * @var $extensionOptions array
  * @var $modalId string
  * @var $inputImageId string id of image input field
@@ -30,7 +30,7 @@ $cropperOptions = Json::encode($cropperOptions);
         <div class="cropper-preview">
             <div class="cropper-preview-img">
                 <?= Html::img(
-                    $imageUrl,
+                    $previewImageUrl,
                     [
                         'width' => $extensionOptions['preview']['width'],
                         'height' => $extensionOptions['preview']['height'],

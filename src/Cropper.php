@@ -19,7 +19,7 @@ class Cropper extends InputWidget
      *
      * @var string
      */
-    public $imageUrl;
+    public $previewImageUrl;
 
     /**
      * @var string attribute to save and pass cropper data
@@ -60,10 +60,10 @@ class Cropper extends InputWidget
 
         $this->assetBaseUrl = $initCropperAsset->baseUrl;
 
-        if (isset($this->imageUrl) && !empty($this->imageUrl)) {
-            $this->imageUrl = trim($this->imageUrl);
+        if (isset($this->previewImageUrl) && !empty($this->previewImageUrl)) {
+            $this->previewImageUrl = trim($this->previewImageUrl);
         } else {
-            $this->imageUrl = $this->assetBaseUrl . '/img/no-image.svg';
+            $this->previewImageUrl = $this->assetBaseUrl . '/img/no-image.svg';
         }
 
         $this->settingExtensionOptions();
@@ -80,7 +80,7 @@ class Cropper extends InputWidget
 
         return $this->render('view', [
             'imageId' => $imageId,
-            'imageUrl' => $this->imageUrl,
+            'previewImageUrl' => $this->previewImageUrl,
             'extensionOptions' => $this->extensionOptions,
             'modalId' => $modalId,
             'inputImageId' => $inputImageId,
