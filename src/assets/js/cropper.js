@@ -11,6 +11,7 @@
  * @param {string} cropButtonId id of Crop button
  * @param {string} modalId
  * @param {string} previewImageId
+ * @param {string} thisId id of active form input field
  */
 
 // import 'cropperjs/dist/cropper.css';
@@ -83,41 +84,21 @@
             console.log(cropper.getData());
         });
 
-        // On crop button clicked
+        /* On crop button click */
         $(cropButtonId).on('click', function () {
             const imgUrl = cropper.getCroppedCanvas().toDataURL();
             $(previewImageId).attr('src', imgUrl);
             $(modalId).modal('hide');
+
+            cropper.getCroppedCanvas().toBlob((blob) => {
+                let reader = new FileReader();
+                reader.readAsDataURL(blob);
+                reader.onloadend = function () {
+                    const base64data = reader.result;
+                    $(thisId).val(base64data)
+                }
+            });
         });
-
-        // On crop button clicked
-        // document.getElementById('crop_button').addEventListener('click', function () {
-        //     var imgurl = cropper.getCroppedCanvas().toDataURL();
-        //     var img = document.createElement("img");
-        //     img.src = imgurl;
-        //     document.getElementById("cropped_result").appendChild(img);
-
-            /* ---------------- SEND IMAGE TO THE SERVER-------------------------
-
-                cropper.getCroppedCanvas().toBlob(function (blob) {
-                      var formData = new FormData();
-                      formData.append('croppedImage', blob);
-                      // Use `jQuery.ajax` method
-                      $.ajax('/path/to/upload', {
-                        method: "POST",
-                        data: formData,
-                        processData: false,
-                        contentType: false,
-                        success: function () {
-                          console.log('Upload success');
-                        },
-                        error: function () {
-                          console.log('Upload error');
-                        }
-                      });
-                });
-            ----------------------------------------------------*/
-        // })
     }
 
     $("button[data-toggle='modal']").on('click', function () {

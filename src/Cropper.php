@@ -73,6 +73,8 @@ class Cropper extends InputWidget
         $previewImageId = 'cropper-preview-image-' . $thisId;
 
         return $this->render('view', [
+            'model' => $this->model,
+            'attribute' => $this->attribute,
             'imageId' => $imageId,
             'previewImageUrl' => $this->previewImageUrl,
             'extensionOptions' => $this->extensionOptions,
@@ -80,7 +82,8 @@ class Cropper extends InputWidget
             'inputImageId' => $inputImageId,
             'cropperOptions' => $this->cropperOptions,
             'cropButtonId' => $cropButtonId,
-            'previewImageId' => $previewImageId
+            'previewImageId' => $previewImageId,
+            'thisId' => $thisId
         ]);
     }
 

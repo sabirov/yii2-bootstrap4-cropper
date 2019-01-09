@@ -23,14 +23,12 @@ use yii\helpers\Json;
  * @var $cropperOptions array options for cropperjs
  * @var $cropButtonId string id of Crop button
  * @var $previewImageId string
+ * @var $thisId string
  */
 
 $cropperOptions = Json::encode($cropperOptions);
 
-echo Html::tag('div', Html::activeTextInput($model, $attribute, [
-    'value' => null,
-    'class' => 'hidden',
-]));
+echo Html::activeHiddenInput($model, $attribute);
 ?>
     <div class="cropper-wrapper clearfix">
         <div class="cropper-preview">
@@ -119,5 +117,6 @@ const cropperOptions = '$cropperOptions';
 const cropButtonId = '#'+'$cropButtonId';
 const modalId = '#' + '$modalId';
 const previewImageId = '#' + '$previewImageId';
+const thisId = '#' + ' $thisId ';
 JS;
 Yii::$app->view->registerJs($passVariables, $this::POS_HEAD);
