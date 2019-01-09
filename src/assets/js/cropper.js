@@ -85,7 +85,7 @@
 
         $(cropButtonId).on('click', function () {
             console.log(cropper.getData());
-        })
+        });
 
         // On crop button clicked
         $(cropButtonId).on('click', function () {
@@ -125,6 +125,7 @@
     }
 
     $("button[data-toggle='modal']").on('click', function () {
+        const modalId = '#' + $(this).data('target');
         $(modalId).modal('show');
     });
 })(jQuery);
