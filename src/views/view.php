@@ -13,6 +13,8 @@ use yii\helpers\Json;
 
 /**
  * @var $this \yii\web\View
+ * @var $model \yii\db\ActiveRecord
+ * @var $attribute string
  * @var $imageId string
  * @var $previewImageUrl string
  * @var $extensionOptions array
@@ -20,12 +22,15 @@ use yii\helpers\Json;
  * @var $inputImageId string id of image input field
  * @var $cropperOptions array options for cropperjs
  * @var $cropButtonId string id of Crop button
- * @var $cropDataAttribute string attribute to save and pass cropper data
- * @var $cropDataAttributeId string
  * @var $previewImageId string
  */
 
 $cropperOptions = Json::encode($cropperOptions);
+
+echo Html::tag('div', Html::activeTextInput($model, $attribute, [
+    'value' => null,
+    'class' => 'hidden',
+]));
 ?>
     <div class="cropper-wrapper clearfix">
         <div class="cropper-preview">
@@ -112,7 +117,6 @@ const inputImageId = '#'+'$inputImageId';
 const imageId = '#'+'$imageId';
 const cropperOptions = '$cropperOptions';
 const cropButtonId = '#'+'$cropButtonId';
-const cropDataAttributeId = '#' + '$cropDataAttributeId';
 const modalId = '#' + '$modalId';
 const previewImageId = '#' + '$previewImageId';
 JS;

@@ -9,7 +9,6 @@
  * @param {string} imageId id of cropper image
  * @param {string} cropperOptions json encode cropper options
  * @param {string} cropButtonId id of Crop button
- * @param {string} cropDataAttributeId id of hidden field for cropper data storage
  * @param {string} modalId
  * @param {string} previewImageId
  */
@@ -21,9 +20,6 @@
     const browseSelector = '.btn-file :file';
     let cropper;
     const cropperOptionsObj = JSON.parse(cropperOptions);
-
-    console.log(cropDataAttributeId);
-    // console.log(cropperOptionsObj);
 
     $(document).on('change', browseSelector, function () {
         const input = $(this);

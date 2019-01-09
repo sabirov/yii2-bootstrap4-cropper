@@ -10,7 +10,6 @@
 namespace sabirov\cropper;
 
 use yii\widgets\InputWidget;
-use yii\helpers\Html;
 
 class Cropper extends InputWidget
 {
@@ -20,11 +19,6 @@ class Cropper extends InputWidget
      * @var string
      */
     public $previewImageUrl;
-
-    /**
-     * @var string attribute to save and pass cropper data
-     */
-    public $cropDataAttribute;
 
     /**
      *  preview =
@@ -76,7 +70,6 @@ class Cropper extends InputWidget
         $modalId = 'cropper-modal-' . $thisId;
         $inputImageId = 'cropper-input-image-' . $thisId;
         $cropButtonId = 'cropper-crop-btn-' . $thisId;
-        $cropDataAttributeId = Html::getInputId($this->model, $this->cropDataAttribute);
         $previewImageId = 'cropper-preview-image-' . $thisId;
 
         return $this->render('view', [
@@ -87,8 +80,6 @@ class Cropper extends InputWidget
             'inputImageId' => $inputImageId,
             'cropperOptions' => $this->cropperOptions,
             'cropButtonId' => $cropButtonId,
-            'cropDataAttribute' => $this->cropDataAttribute,
-            'cropDataAttributeId' => $cropDataAttributeId,
             'previewImageId' => $previewImageId
         ]);
     }
