@@ -88,14 +88,15 @@
         $(cropButtonId).on('click', function () {
             const imgUrl = cropper.getCroppedCanvas().toDataURL();
             $(previewImageId).attr('src', imgUrl);
-            $(modalId).modal('hide');
 
             cropper.getCroppedCanvas().toBlob((blob) => {
                 let reader = new FileReader();
                 reader.readAsDataURL(blob);
                 reader.onloadend = function () {
                     const base64data = reader.result;
-                    $(thisId).val(base64data)
+                    $(thisId).val(base64data);
+
+                    $(modalId).modal('hide');
                 }
             });
         });
