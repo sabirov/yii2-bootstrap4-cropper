@@ -22,6 +22,7 @@ use yii\helpers\Json;
  * @var $cropButtonId string id of Crop button
  * @var $cropDataAttribute string attribute to save and pass cropper data
  * @var $cropDataAttributeId string
+ * @var $previewImageId string
  */
 
 $cropperOptions = Json::encode($cropperOptions);
@@ -32,6 +33,7 @@ $cropperOptions = Json::encode($cropperOptions);
                 <?= Html::img(
                     $previewImageUrl,
                     [
+                        'id' => $previewImageId,
                         'width' => $extensionOptions['preview']['width'],
                         'height' => $extensionOptions['preview']['height'],
                         'alt' => 'cropper image preview'
@@ -111,5 +113,7 @@ const imageId = '#'+'$imageId';
 const cropperOptions = '$cropperOptions';
 const cropButtonId = '#'+'$cropButtonId';
 const cropDataAttributeId = '#' + '$cropDataAttributeId';
+const modalId = '#' + '$modalId';
+const previewImageId = '#' + '$previewImageId';
 JS;
 Yii::$app->view->registerJs($passVariables, $this::POS_HEAD);

@@ -77,6 +77,7 @@ class Cropper extends InputWidget
         $inputImageId = 'cropper-input-image-' . $thisId;
         $cropButtonId = 'cropper-crop-btn-' . $thisId;
         $cropDataAttributeId = Html::getInputId($this->model, $this->cropDataAttribute);
+        $previewImageId = 'cropper-preview-image-' . $thisId;
 
         return $this->render('view', [
             'imageId' => $imageId,
@@ -87,7 +88,8 @@ class Cropper extends InputWidget
             'cropperOptions' => $this->cropperOptions,
             'cropButtonId' => $cropButtonId,
             'cropDataAttribute' => $this->cropDataAttribute,
-            'cropDataAttributeId' => $cropDataAttributeId
+            'cropDataAttributeId' => $cropDataAttributeId,
+            'previewImageId' => $previewImageId
         ]);
     }
 

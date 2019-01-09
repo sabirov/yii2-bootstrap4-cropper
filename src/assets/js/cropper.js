@@ -10,6 +10,8 @@
  * @param {string} cropperOptions json encode cropper options
  * @param {string} cropButtonId id of Crop button
  * @param {string} cropDataAttributeId id of hidden field for cropper data storage
+ * @param {string} modalId
+ * @param {string} previewImageId
  */
 
 // import 'cropperjs/dist/cropper.css';
@@ -72,6 +74,7 @@
             console.log(event.detail.scaleX);
             console.log(event.detail.scaleY);
         });*/
+
         /* initialize Cropper */
         cropper = new Cropper(
             image,
@@ -83,6 +86,13 @@
         $(cropButtonId).on('click', function () {
             console.log(cropper.getData());
         })
+
+        // On crop button clicked
+        $(cropButtonId).on('click', function () {
+            const imgUrl = cropper.getCroppedCanvas().toDataURL();
+            $(previewImageId).attr('src', imgUrl);
+            $(modalId).modal('hide');
+        });
 
         // On crop button clicked
         // document.getElementById('crop_button').addEventListener('click', function () {
@@ -115,7 +125,6 @@
     }
 
     $("button[data-toggle='modal']").on('click', function () {
-        const modalId = '#' + $(this).data('target');
         $(modalId).modal('show');
     });
 })(jQuery);
