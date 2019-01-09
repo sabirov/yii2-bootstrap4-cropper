@@ -117,6 +117,6 @@ const cropperOptions = '$cropperOptions';
 const cropButtonId = '#'+'$cropButtonId';
 const modalId = '#' + '$modalId';
 const previewImageId = '#' + '$previewImageId';
-const thisId = '#' + ' $thisId ';
+const thisId = '#' + '$thisId';
 JS;
 Yii::$app->view->registerJs($passVariables, $this::POS_HEAD);
