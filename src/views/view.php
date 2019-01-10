@@ -51,7 +51,7 @@ echo Html::activeHiddenInput($model, $attribute);
                         'class' => 'btn btn-primary',
                         'type' => 'button',
                         'data-toggle' => 'modal',
-                        'data-target' => $modalId
+                        'data-target' => '#' . $modalId
                     ]
                 );
                 ?>

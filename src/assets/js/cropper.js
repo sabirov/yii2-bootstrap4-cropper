@@ -39,7 +39,7 @@
 
     function readURL(input) {
         if (input.files && input.files[0]) {
-            var reader = new FileReader();
+            let reader = new FileReader();
 
             reader.onload = function (event) {
                 $(imageId).attr('src', event.target.result);
@@ -80,9 +80,9 @@
 
         $('.cropper-warning').show();
 
-        $(cropButtonId).on('click', function () {
+        /*$(cropButtonId).on('click', function () {
             console.log(cropper.getData());
-        });
+        });*/
 
         /* On crop button click */
         $(cropButtonId).on('click', function () {
@@ -101,9 +101,4 @@
             });
         });
     }
-
-    $("button[data-toggle='modal']").on('click', function () {
-        const modalId = '#' + $(this).data('target');
-        $(modalId).modal('show');
-    });
 })(jQuery);
