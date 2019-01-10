@@ -17,9 +17,7 @@ class InitCropperAsset extends AssetBundle
     public $css = [
         'css/cropper.css'
     ];
-    public $js = [
-//        'js/cropper.js'
-    ];
+    public $js = [];
     public $depends = [
         'sabirov\cropper\CropperAsset',
         'yii\web\JqueryAsset'

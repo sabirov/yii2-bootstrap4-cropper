@@ -121,7 +121,7 @@ $js = <<<JS
 
     $(document).on('change', inputImageId, function () {
         const input = $(this);
-        let label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+        let label = input.val().replace(/\\//g, '/').replace(/.*\//, '');
         input.trigger('fileselect', [label]);
     });
 
