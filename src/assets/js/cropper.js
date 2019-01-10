@@ -34,7 +34,15 @@
         }
     });
 
-    function readURL(input) {
+    $(inputImageId).on('change', function () {
+        readURL(this);
+    });
+
+    $(modalId).on("hidden.bs.modal", function () {
+        alert('close');
+    });
+
+    const readURL = function (input) {
         if (input.files && input.files[0]) {
             let reader = new FileReader();
 
@@ -45,13 +53,9 @@
 
             reader.readAsDataURL(input.files[0]);
         }
-    }
+    };
 
-    $(inputImageId).on('change', function () {
-        readURL(this);
-    });
-
-    function initCropper() {
+    const initCropper = function () {
         if (typeof (cropper) !== 'undefined') {
             cropper.destroy();
         }
