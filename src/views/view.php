@@ -106,18 +106,6 @@ echo Html::tag(
 
 Modal::end();
 
-/* passing variables to JS */
-$thisIdVar = 'thisId' . $thisId;
-$inputImageIdVar = 'inputImageId' . $thisId;
-$imageIdVar = 'imageId' . $thisId;
-$cropButtonIdVar = 'cropButtonId' . $thisId;
-$modalIdVar = 'modalId' . $thisId;
-$previewImageIdVar = 'previewImageId' . $thisId;
-$cropperOptionsVar = 'cropperOptions' . $thisId;
-
-
-Yii::$app->view->registerJs($passVariables, $this::POS_HEAD);
-
 /* add java script */
 $js = <<<JS
 (function ($) {
