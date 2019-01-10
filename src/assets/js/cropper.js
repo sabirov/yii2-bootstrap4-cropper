@@ -14,10 +14,7 @@
  * @param {string} thisId id of active form input field
  */
 
-// import 'cropperjs/dist/cropper.css';
-// import Cropper from 'cropperjs';
-
-(function ($) {
+(function ($, inputImageId, imageId, cropperOptions, cropButtonId, modalId, previewImageId, thisId) {
     let cropper;
     const cropperOptionsObj = JSON.parse(cropperOptions);
 
@@ -79,10 +76,6 @@
         );
 
         $('.cropper-warning').show();
-
-        /*$(cropButtonId).on('click', function () {
-            console.log(cropper.getData());
-        });*/
 
         /* On crop button click */
         $(cropButtonId).on('click', function () {
