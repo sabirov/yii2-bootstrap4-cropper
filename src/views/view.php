@@ -9,7 +9,6 @@
 
 use yii\bootstrap4\Modal;
 use yii\helpers\Html;
-use yii\helpers\Json;
 
 /**
  * @var $this \yii\web\View
@@ -20,13 +19,11 @@ use yii\helpers\Json;
  * @var $extensionOptions array
  * @var $modalId string
  * @var $inputImageId string id of image input field
- * @var $cropperOptions array options for cropperjs
+ * @var $cropperOptions string json options for cropperjs
  * @var $cropButtonId string id of Crop button
  * @var $previewImageId string
  * @var $thisId string
  */
-
-$cropperOptions = Json::encode($cropperOptions);
 
 echo Html::activeHiddenInput($model, $attribute);
 ?>

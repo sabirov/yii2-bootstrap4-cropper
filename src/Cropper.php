@@ -10,6 +10,7 @@
 namespace sabirov\cropper;
 
 use yii\widgets\InputWidget;
+use yii\helpers\Json;
 
 class Cropper extends InputWidget
 {
@@ -80,7 +81,7 @@ class Cropper extends InputWidget
             'extensionOptions' => $this->extensionOptions,
             'modalId' => $modalId,
             'inputImageId' => $inputImageId,
-            'cropperOptions' => $this->cropperOptions,
+            'cropperOptions' => Json::encode($this->cropperOptions),
             'cropButtonId' => $cropButtonId,
             'previewImageId' => $previewImageId,
             'thisId' => $thisId
