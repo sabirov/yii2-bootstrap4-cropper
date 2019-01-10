@@ -115,13 +115,110 @@ $modalIdVar = 'modalId' . $thisId;
 $previewImageIdVar = 'previewImageId' . $thisId;
 $cropperOptionsVar = 'cropperOptions' . $thisId;
 
-$passVariables = <<<JS
-const $thisIdVar = '#'+'$thisId';
-const $inputImageIdVar  = '#'+'$inputImageId';
-const $imageIdVar = '#'+'$imageId';
-const $cropButtonIdVar = '#'+'$cropButtonId';
-const $modalIdVar = '#' + '$modalId';
-const $previewImageIdVar = '#' + '$previewImageId';
-const $cropperOptionsVar = '$cropperOptions';
-JS;
+
 Yii::$app->view->registerJs($passVariables, $this::POS_HEAD);
+
+/* add java script */
+$js = <<<JS
+(function ($) {
+    let cropper;
+    const cropperOptions = '$cropperOptions';
+    const cropperOptionsObj = JSON.parse(cropperOptions);
+    const inputImageId = '#'+'$inputImageId';
+    const modalId = '#' + '$modalId';
+    const imageId = '#'+'$imageId';
+    const cropButtonId = '#'+'$cropButtonId';
+    const previewImageId = '#' + '$previewImageId';
+    const thisId = '#'+'$thisId';
+
+    $(document).on('change', inputImageId, function () {
+        const input = $(this);
+        let label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+        input.trigger('fileselect', [label]);
+    });
+
+    $(inputImageId).on('fileselect', function (event, label) {
+        let input = $(this).parents('.input-group').find(':text');
+
+        if (input.length) {
+            input.val(label);
+        } else {
+            if (label) alert(label);
+        }
+    });
+
+    $(inputImageId).on('change', function () {
+        readURL(this);
+    });
+
+    $(modalId).on("hidden.bs.modal", function () {
+        if (typeof (cropper) !== 'undefined') {
+            cropper.destroy();
+        }
+
+        $(imageId).attr('src', null);
+        $(modalId + ' .cropper-browse-group .form-control').val(null);
+        $('.cropper-warning').hide();
+    });
+
+    const readURL = function (input) {
+        if (input.files && input.files[0]) {
+            let reader = new FileReader();
+
+            reader.onload = function (event) {
+                $(imageId).attr('src', event.target.result);
+                initCropper();
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    };
+
+    const initCropper = function () {
+        if (typeof (cropper) !== 'undefined') {
+            cropper.destroy();
+        }
+
+        const image = $(imageId)[0];
+
+        /* add Cropper events*/
+        /*image.addEventListener('crop', (event) => {
+            console.log(event.detail.x);
+            console.log(event.detail.y);
+            console.log(event.detail.width);
+            console.log(event.detail.height);
+            console.log(event.detail.rotate);
+            console.log(event.detail.scaleX);
+            console.log(event.detail.scaleY);
+        });*/
+
+        /* initialize Cropper */
+        cropper = new Cropper(
+            image,
+            cropperOptionsObj
+        );
+
+        $('.cropper-warning').show();
+
+        /* On crop button click */
+        $(cropButtonId).on('click', function () {
+            const imgUrl = cropper.getCroppedCanvas().toDataURL();
+            $(previewImageId).attr('src', imgUrl);
+
+            cropper.getCroppedCanvas().toBlob((blob) => {
+                let reader = new FileReader();
+                reader.readAsDataURL(blob);
+                reader.onloadend = function () {
+                    const base64data = reader.result;
+                    $(thisId).val(base64data);
+
+                    $(modalId).modal('hide');
+                }
+            });
+        });
+    }
+})(jQuery);
+JS;
+
+Yii::$app->view->registerJs($js, $this::POS_LOAD, 'sabirov-cropper-' . $thisId);
+
