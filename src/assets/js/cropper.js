@@ -47,6 +47,7 @@
 
         $(imageId).attr('src', null);
         $(modalId + ' .cropper-browse-group .form-control').val(null);
+        $('.cropper-warning').hide();
     });
 
     const readURL = function (input) {
