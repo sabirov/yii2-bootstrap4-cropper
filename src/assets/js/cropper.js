@@ -41,7 +41,11 @@
     });
 
     $(modalId).on("hidden.bs.modal", function () {
-        alert('close');
+        if (typeof (cropper) !== 'undefined') {
+            cropper.destroy();
+        }
+
+        $(imageId).attr('src', null);
     });
 
     const readURL = function (input) {
