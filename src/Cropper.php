@@ -27,7 +27,11 @@ class Cropper extends InputWidget
      *          width => '100px', // may be with 'px', '%' and without any, by default '100px'
      *          height => '100px' // may be with 'px', '%' and without any, by default '100px'
      *      ],
-     *  browseButtonText = 'Browse …'
+     *  browseButtonText = 'Browse',
+     *  cropButtonText = 'Crop',
+     *  changeButtonText = 'Change',
+     *  closeButtonText = 'Close',
+     *  cropperWarningText = 'Double-click to switch between moving the image and selecting the cropping area.'
      *
      * @var array
      */
@@ -127,12 +131,35 @@ class Cropper extends InputWidget
             ];
         }
 
-        /* browse button text */
+        /* buttons text */
         if (isset($options['browseButtonText']) && !empty($options['browseButtonText'])) {
             $adjustedOptions['browseButtonText'] = trim($options['browseButtonText']);
         } else {
-            $adjustedOptions['browseButtonText'] = 'Browse …';
+            $adjustedOptions['browseButtonText'] = 'Browse';
         }
+        if (isset($options['cropButtonText']) && !empty($options['cropButtonText'])) {
+            $adjustedOptions['cropButtonText'] = trim($options['cropButtonText']);
+        } else {
+            $adjustedOptions['cropButtonText'] = 'Crop';
+        }
+        if (isset($options['changeButtonText']) && !empty($options['changeButtonText'])) {
+            $adjustedOptions['changeButtonText'] = trim($options['changeButtonText']);
+        } else {
+            $adjustedOptions['changeButtonText'] = 'Change';
+        }
+        if (isset($options['closeButtonText']) && !empty($options['closeButtonText'])) {
+            $adjustedOptions['closeButtonText'] = trim($options['closeButtonText']);
+        } else {
+            $adjustedOptions['closeButtonText'] = 'Close';
+        }
+
+        /* cropper warning text */
+        if (isset($options['cropperWarningText']) && !empty($options['cropperWarningText'])) {
+            $adjustedOptions['cropperWarningText'] = trim($options['cropperWarningText']);
+        } else {
+            $adjustedOptions['cropperWarningText'] = 'Double-click to switch between moving the image and selecting the cropping area.';
+        }
+
 
         $this->extensionOptions = $adjustedOptions;
     }

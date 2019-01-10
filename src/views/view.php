@@ -43,7 +43,7 @@ echo Html::activeHiddenInput($model, $attribute);
             <div class="cropper-preview-buttons">
                 <?php
                 echo Html::button(
-                    'Change',
+                    $extensionOptions['changeButtonText'],
                     [
                         'class' => 'btn btn-primary',
                         'type' => 'button',
@@ -61,14 +61,14 @@ Modal::begin([
     'class' => 'modal fade',
     'title' => 'Cropping the Image',
     'footer' => Html::button(
-            'Crop',
+            $extensionOptions['cropButtonText'],
             [
                 'id' => $cropButtonId,
                 'class' => 'btn btn-primary'
             ]
         ) .
         Html::button(
-            'Close',
+            $extensionOptions['closeButtonText'],
             [
                 'class' => 'btn btn-secondary',
                 'data-dismiss' => 'modal'
@@ -98,7 +98,7 @@ echo Html::tag(
 
 echo Html::tag(
     'div',
-    'Double-click to switch between moving the image and selecting the cropping area.',
+    $extensionOptions['cropperWarningText'],
     [
         'class' => 'alert alert-warning cropper-warning'
     ]
