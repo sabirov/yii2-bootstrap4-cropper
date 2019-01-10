@@ -5,16 +5,18 @@
  * @license     https://opensource.org/licenses/MIT
  * @since       19.12.18
  *
- * @param {string} inputImageId id of image input field
- * @param {string} imageId id of cropper image
- * @param {string} cropperOptions json encode cropper options
- * @param {string} cropButtonId id of Crop button
- * @param {string} modalId
- * @param {string} previewImageId
- * @param {string} thisId id of active form input field
+ * @var {string} inputImageId id of image input field
+ * @var {string} imageId id of cropper image
+ * @var {string} cropperOptions json encode cropper options
+ * @var {string} cropButtonId id of Crop button
+ * @var {string} modalId
+ * @var {string} previewImageId
+ * @var {string} thisId id of active form input field
+ *
+ * @param {function} $
  */
 
-(function ($, inputImageId, imageId, cropperOptions, cropButtonId, modalId, previewImageId, thisId) {
+(function ($) {
     let cropper;
     const cropperOptionsObj = JSON.parse(cropperOptions);
 
