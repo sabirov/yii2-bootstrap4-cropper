@@ -107,13 +107,21 @@ echo Html::tag(
 Modal::end();
 
 /* passing variables to JS */
+$thisIdVar = 'thisId' . $thisId;
+$inputImageIdVar = 'inputImageId' . $thisId;
+$imageIdVar = 'imageId' . $thisId;
+$cropButtonIdVar = 'cropButtonId' . $thisId;
+$modalIdVar = 'modalId' . $thisId;
+$previewImageIdVar = 'previewImageId' . $thisId;
+$cropperOptionsVar = 'cropperOptions' . $thisId;
+
 $passVariables = <<<JS
-const inputImageId = '#'+'$inputImageId';
-const imageId = '#'+'$imageId';
-const cropperOptions = '$cropperOptions';
-const cropButtonId = '#'+'$cropButtonId';
-const modalId = '#' + '$modalId';
-const previewImageId = '#' + '$previewImageId';
-const thisId = '#' + '$thisId';
+const $thisIdVar = '#'+'$thisId';
+const $inputImageIdVar  = '#'+'$inputImageId';
+const $imageIdVar = '#'+'$imageId';
+const $cropButtonIdVar = '#'+'$cropButtonId';
+const $modalIdVar = '#' + '$modalId';
+const $previewImageIdVar = '#' + '$previewImageId';
+const $cropperOptionsVar = '$cropperOptions';
 JS;
 Yii::$app->view->registerJs($passVariables, $this::POS_HEAD);
