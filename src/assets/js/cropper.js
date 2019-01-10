@@ -18,17 +18,16 @@
 // import Cropper from 'cropperjs';
 
 (function ($) {
-    const browseSelector = '.btn-file :file';
     let cropper;
     const cropperOptionsObj = JSON.parse(cropperOptions);
 
-    $(document).on('change', browseSelector, function () {
+    $(document).on('change', inputImageId, function () {
         const input = $(this);
         let label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
         input.trigger('fileselect', [label]);
     });
 
-    $(browseSelector).on('fileselect', function (event, label) {
+    $(inputImageId).on('fileselect', function (event, label) {
         let input = $(this).parents('.input-group').find(':text');
 
         if (input.length) {
@@ -61,6 +60,7 @@
         }
 
         const image = $(imageId)[0];
+
         /* add Cropper events*/
         /*image.addEventListener('crop', (event) => {
             console.log(event.detail.x);
