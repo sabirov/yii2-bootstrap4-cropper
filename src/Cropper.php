@@ -22,16 +22,16 @@ class Cropper extends InputWidget
     public $previewImageUrl;
 
     /**
-     *  preview =
+     *  'preview' =>
      *      [
-     *          width => '100px', // may be with 'px', '%' and without any, by default '100px'
-     *          height => '100px' // may be with 'px', '%' and without any, by default '100px'
+     *          'width' => '300px', // may be with 'px', '%' and without any, by default '100px'
+     *          'height' => '300px' // may be with 'px', '%' and without any, by default '100px'
      *      ],
-     *  browseButtonText = 'Browse',
-     *  cropButtonText = 'Crop',
-     *  changeButtonText = 'Change',
-     *  closeButtonText = 'Close',
-     *  cropperWarningText = 'Double-click to switch between moving the image and selecting the cropping area.'
+     *  'browseButtonText' => 'Browse',
+     *  'cropButtonText' => 'Crop',
+     *  'changeButtonText' => 'Change',
+     *  'closeButtonText' => 'Close',
+     *  'cropperWarningText' => 'Double-click to switch between moving the image and selecting the cropping area.'
      *
      * @var array
      */
