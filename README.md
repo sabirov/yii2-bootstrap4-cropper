@@ -14,13 +14,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require --prefer-dist sabirov/yii2-bootstrap4-cropper "dev-master"
+php composer.phar require sabirov/yii2-bootstrap4-cropper
 ```
 
 or add
 
 ```
-"sabirov/yii2-bootstrap4-cropper": "dev-master"
+"sabirov/yii2-bootstrap4-cropper": "^0.1.0"
 ```
 
 to the require section of your `composer.json` file.
