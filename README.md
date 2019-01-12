@@ -1,3 +1,5 @@
+NOT WORKING YET
+===============
 Yii2 Bootstrap4 Image Cropper InputWidget 
 ==========================================
 
