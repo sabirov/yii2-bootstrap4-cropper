@@ -20,7 +20,7 @@ php composer.phar require sabirov/yii2-bootstrap4-cropper
 or add
 
 ```
-"sabirov/yii2-bootstrap4-cropper": "^0.1.0"
+"sabirov/yii2-bootstrap4-cropper": "^0.1.1"
 ```
 
 to the require section of your `composer.json` file.
