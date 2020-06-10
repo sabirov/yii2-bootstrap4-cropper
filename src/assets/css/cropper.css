@@ -12,3 +12,7 @@ img.sabirov-cropper-image {
     margin-bottom: 0;
     display: none;
 }
+
+.input-group-btn {
+    margin-right: 1rem;
+}
