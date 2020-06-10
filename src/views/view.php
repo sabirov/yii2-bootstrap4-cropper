@@ -80,7 +80,7 @@ Modal::begin([
 ?>
     <div class="input-group cropper-browse-group">
             <span class="input-group-btn">
-                <span class="btn btn-default btn-file">
+                <span class="btn btn-primary btn-file">
                     <?= $extensionOptions['browseButtonText'] ?> <input type="file" id="<?= $inputImageId ?>">
                 </span>
             </span>
