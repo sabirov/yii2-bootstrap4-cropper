@@ -84,7 +84,7 @@ Modal::begin([
                     <?= $extensionOptions['browseButtonText'] ?> <input type="file" id="<?= $inputImageId ?>">
                 </span>
             </span>
-        <input type="text" class="form-control" readonly>
+        <input type="text" class="form-control" disabled="disabled">
     </div>
 <?php
 echo Html::tag(
